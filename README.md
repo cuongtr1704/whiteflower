@@ -10,10 +10,18 @@ sẵn tin nhắn để khách tự gửi Zalo.
 ## Sửa nội dung
 
 Mở `index.html`, kéo xuống thẻ `<script>` gần cuối file, tìm khối
-`/* ================= phần phải điền =================`. Đổi giá trị trong
-`CAU_HINH` là xong phần chữ: tên, ngày giờ, địa chỉ, số điện thoại. Chỗ nào
-trong trang cần tới thì tự ăn theo, không phải đi tìm sửa từng dòng. Link bản
-đồ cũng dựng từ địa chỉ bạn điền.
+`/* ================= phần phải điền =================`. Mọi thứ riêng đều nằm
+trong `CAU_HINH` ở đó và đang để sẵn dạng `[...]` cho dễ thấy chỗ nào chưa điền.
+
+Sửa xong khối đó là cả trang ăn theo, không phải đi tìm từng dòng. Riêng
+`NGAY_GIO` kéo theo khá nhiều thứ: hộp ngày ở đầu trang, tờ lịch (tự dựng đúng
+số ô cho tháng đó rồi đánh dấu đúng ngày), đếm ngược, giờ trong lịch trình và
+dòng hẹn ở chân trang. Đổi mỗi dòng đó là xong phần ngày tháng.
+
+Link bản đồ cũng dựng từ địa chỉ bạn điền, không phải dán tay.
+
+Những câu chữ còn lại trong trang là lời mẫu, đọc qua một lượt rồi viết lại
+theo giọng của bạn.
 
 ## Bỏ ảnh vào
 
@@ -42,8 +50,12 @@ nên nhìn ra như vỡ, dù file gốc rất nét.
 
 ## Nhạc nền
 
-Chép file nhạc vào thư mục gốc, đặt tên `nhac.m4a`. Không có file thì trang vẫn
-chạy, chỉ là im.
+Kèm sẵn `nhac.m4a` để xem thử cho đúng không khí. **Đổi được**: chép file khác
+vào thư mục gốc, đặt đúng tên `nhac.m4a` là xong, không phải sửa code. Xoá hẳn
+file thì trang vẫn chạy, chỉ là im.
+
+Bản nhạc đi kèm chỉ dùng để xem thử. Mang thiệp đi bán hay đăng công khai
+thì thay bằng bản bạn có quyền dùng.
 
 ## Đưa lên mạng
 

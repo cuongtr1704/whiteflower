@@ -1384,11 +1384,11 @@ footer .ph--wide{
         <p class="inv-line" id="h-invite">Đến tham dự lễ tốt nghiệp của tân cử nhân</p>
         <h2 class="inv-name">{{HO_TEN}}</h2>
         <span class="inv-rule" aria-hidden="true"></span>
-        <p class="at-time">Vào 13:30, Thứ Bảy</p>
+        <p class="at-time" id="d-gio-thu"></p>
         <div class="datebox">
-          <span>Tháng 11</span>
-          <b>07</b>
-          <span>Năm 2026</span>
+          <span id="d-thang"></span>
+          <b id="d-ngay"></b>
+          <span id="d-nam"></span>
         </div>
         <p class="at-place">Tổ chức tại</p>
         <p class="venue">{{TRUONG}}</p>
@@ -1404,7 +1404,7 @@ footer .ph--wide{
           </div>
           <iframe class="vmap-frame" id="vmap-frame"
             src="about:blank"
-            title="Bản đồ tới Đại học Kinh tế TP. Hồ Chí Minh"
+            title="Bản đồ tới {{TRUONG}}"
             loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
@@ -1442,7 +1442,7 @@ footer .ph--wide{
               <p class="glabel">Cổng vào</p>
               <p class="gaddr">{{CONG_VAO}}</p>
             </div>
-            <p class="gnote">Mình sẽ đứng xung quanh khu vực giữa đàn piano và phía sau cầu thang nhé!!</p>
+            <p class="gnote">{{CHO_DOI}}</p>
           </div>
         </div>
         <div class="gcard" style="--i:2;--fx:-10vw;--fy:0px">
@@ -1451,7 +1451,7 @@ footer .ph--wide{
           <div class="gbody">
             <p>Vậy thì hãy nhấc máy lên và gọi 1 trong hai dãy số sau để được gặp {{TEN}} nhanh chóng nhé</p>
             <div class="gcalls">
-              <p class="glabel">{{NGUOI_1}} <em>(trợ lí đáng iu của {{TEN}})</em></p>
+              <p class="glabel">{{NGUOI_1}} <em>({{VAI_TRO_1}} của {{TEN}})</em></p>
               <p class="gphone"><b id="phone-1">{{SDT_1}}</b></p>
               <button class="btn btn--nho" type="button" id="copy-phone">Copy</button>
               <p class="glabel">{{TEN}}</p>
@@ -1474,14 +1474,14 @@ footer .ph--wide{
         <div class="srow srow--a" style="--i:0;--fx:-12vw;--fy:0px">
           <span class="sicon"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#camFancy"/></svg></span>
           <div class="sinfo">
-            <p class="stime">13<span>:</span>30</p>
-            <p class="sname">Chụp hình kỷ niệm</p>
-            <p class="stag">Cùng lưu giữ những bức hình tuyệt vời nào</p>
+            <p class="stime" id="d-gio-1"></p>
+            <p class="sname">{{MOC_1_TEN}}</p>
+            <p class="stag">{{MOC_1_PHU}}</p>
           </div>  
         </div>
         <div class="srow srow--b" style="--i:1;--fx:12vw;--fy:0px">
           <div class="sinfo">
-            <p class="stime">15<span>:</span>00</p>
+            <p class="stime" id="d-gio-2"></p>
             <p class="sname">{{TEN}} làm lễ tốt nghiệp</p>
           </div>
           <span class="sicon"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#capIcon"/></svg></span>
@@ -1499,21 +1499,14 @@ footer .ph--wide{
       </div>
       <div class="cal-row">
         <div class="cal rv" style="--fx:-14vw;--fy:0px">
-          <p class="cal-head">Tháng Mười Một</p>
+          <p class="cal-head" id="d-thang-chu"></p>
           <table>
             <thead>
               <tr><th>T2</th><th>T3</th><th>T4</th><th>T5</th><th>T6</th><th>T7</th><th>CN</th></tr>
             </thead>
-            <tbody>
-              <tr><td class="off">0</td><td class="off">0</td><td class="off">0</td><td class="off">0</td><td class="off">0</td><td class="off">0</td><td>1</td></tr>
-              <tr><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td class="day-x"><svg class="day-bong" viewBox="-54 -54 108 108" aria-hidden="true"><use href="#bloomDam"/></svg>7</td><td>8</td></tr>
-              <tr><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td></tr>
-              <tr><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td></tr>
-              <tr><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td></tr>
-              <tr><td>30</td><td class="off">0</td><td class="off">0</td><td class="off">0</td><td class="off">0</td><td class="off">0</td><td class="off">0</td></tr>
-            </tbody>
+            <tbody id="d-lich"></tbody>
           </table>
-          <p class="cal-note">Thứ Bảy &middot; 13:30</p>
+          <p class="cal-note" id="d-thu-gio"></p>
         </div>
       <div class="cal-photos rv" style="--fx:16vw;--fy:0px;--fr:9deg">
         <figure class="paper cal-photo" style="--tilt:-2.6deg">
@@ -1632,7 +1625,7 @@ footer .ph--wide{
       <p class="fline" style="--i:2">Một bức ảnh của chúng ta</p>
       <p class="fline" style="--i:3">tại buổi lễ tốt nghiệp</p>
       <p class="fline" style="--i:4">sẽ là món quà lớn nhất của {{TEN}}</p>
-      <p class="fline fline--date" style="--i:5">Hẹn gặp bạn chiều thứ Bảy, 07.11.2026.</p>
+      <p class="fline fline--date" id="d-hen" style="--i:5"></p>
       <button class="btn" type="button" id="share-btn" style="--i:6;justify-self:center">Chia sẻ thiệp này</button>
     </div>
   </footer>
@@ -1648,19 +1641,27 @@ footer .ph--wide{
   /* ================= phần phải điền =================
      Sửa mấy dòng dưới đây là xong phần chữ. Chỗ khác tự ăn theo. */
   var CAU_HINH = {
-    TEN:       "Mây",                          // tên gọi ngắn, hiện khắp thiệp
-    HO_TEN:    "Nguyễn Thị Khánh Mây",         // họ tên đầy đủ, in giữa thiệp
-    NGAY_GIO:  "2026-12-19T13:30:00+07:00",    // ngày giờ hành lễ, giờ Việt Nam
-    TRUONG:    "Trường Đại học ABC",
-    DIA_CHI:   "123 Đường Số 1, Phường Hai",   // bản đồ dựng theo dòng này
-    TINH_TP:   "Thành phố Hồ Chí Minh",
-    CONG_VAO:  "Cổng chính 123 Đường Số 1",
-    BAI_XE_1:  "45 Đường Số 2, Phường Hai",    // bãi gửi xe chính
-    BAI_XE_2:  "67 Đường Số 3, Phường Hai",    // bãi dự phòng
-    NGUOI_1:   "Khánh Linh",                   // người hỗ trợ, có số máy riêng
-    SDT_1:     "0900 000 001",                 // số của người hỗ trợ
-    SDT_2:     "0900 000 002",                 // số của chủ thiệp, Zalo gửi về đây
-    MAY_CHU:   "https://ten-may-chu.onrender.com"   // Render, bỏ dấu / cuối
+    TEN:        "[Tên gọi]",              // tên gọi ngắn, hiện khắp thiệp
+    HO_TEN:     "[Họ và tên đầy đủ]",     // in giữa thiệp
+    NGAY_GIO:   "2026-12-19T13:30:00+07:00",  // giờ hành lễ. Hộp ngày, tờ lịch,
+                                              // đếm ngược, dòng chân trang đều
+                                              // tự tính ra từ dòng này.
+    TRUONG:     "[Tên trường]",
+    DIA_CHI:    "[Số nhà, đường, phường]",    // link bản đồ dựng theo dòng này
+    TINH_TP:    "[Tỉnh / thành phố]",
+    CONG_VAO:   "[Cổng nào, mô tả cho khách dễ tìm]",
+    CHO_DOI:    "[Bạn sẽ đứng đợi khách ở chỗ nào]",
+    BAI_XE_1:   "[Địa chỉ bãi gửi xe chính]",
+    BAI_XE_2:   "[Địa chỉ bãi dự phòng]",
+    VAI_TRO_1:  "[vai trò, ví dụ: chị gái]",  // người cầm máy hộ, hiện trong ngoặc
+    NGUOI_1:    "[Tên người đó]",
+    SDT_1:      "[09xx xxx xxx]",             // số của người đó
+    SDT_2:      "[09xx xxx xxx]",             // số của chủ thiệp, Zalo gửi về đây
+    MOC_1_GIO:  "13:30",                      // mốc trước lễ trong lịch trình
+    MOC_1_TEN:  "[Tên mốc, ví dụ: Chụp hình kỷ niệm]",
+    MOC_1_PHU:  "[Một dòng phụ cho mốc đó]",
+    MOC_2_GIO:  "15:00",                      // giờ vào lễ, hiện ở lịch trình
+    MAY_CHU:    "https://ten-may-chu.onrender.com"   // Render, bỏ dấu / cuối
   };
   /* ================= hết phần phải điền ================= */
 
@@ -1688,15 +1689,72 @@ footer .ph--wide{
     var di = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null), nut, dsach = [];
     while ((nut = di.nextNode())) { if (nut.nodeValue.indexOf("{{") >= 0) { dsach.push(nut); } }
     dsach.forEach(function (t) { t.nodeValue = thay(t.nodeValue); });
-    Array.prototype.forEach.call(document.querySelectorAll("[placeholder],[alt],[aria-label],[content]"),
+    Array.prototype.forEach.call(document.querySelectorAll("[placeholder],[alt],[aria-label],[content],[title]"),
       function (el) {
-        ["placeholder", "alt", "aria-label", "content"].forEach(function (a) {
+        ["placeholder", "alt", "aria-label", "content", "title"].forEach(function (a) {
           var v = el.getAttribute(a);
           if (v && v.indexOf("{{") >= 0) { el.setAttribute(a, thay(v)); }
         });
       });
 
     var diaChi = CAU_HINH.DIA_CHI + ", " + CAU_HINH.TINH_TP;
+    var THU = ["Chủ Nhật", "Thứ Hai", "Thứ Ba", "Thứ Tư", "Thứ Năm", "Thứ Sáu", "Thứ Bảy"];
+    var THANG_CHU = ["Tháng Một", "Tháng Hai", "Tháng Ba", "Tháng Tư", "Tháng Năm",
+      "Tháng Sáu", "Tháng Bảy", "Tháng Tám", "Tháng Chín", "Tháng Mười",
+      "Tháng Mười Một", "Tháng Mười Hai"];
+
+    /* Bóc số thẳng từ chuỗi ISO chứ không qua new Date(): máy khách để múi giờ
+       nào thì ngày tháng vẫn đúng như đã ghi trong cấu hình. */
+    var sv = CAU_HINH.NGAY_GIO.match(/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/);
+    if (sv) {
+      var nam = +sv[1], thang = +sv[2] - 1, ngay = +sv[3], gio = sv[4], phut = sv[5];
+      var thu = THU[new Date(Date.UTC(nam, thang, ngay)).getUTCDay()];
+      var buoi = +gio < 12 ? "sáng" : (+gio < 18 ? "chiều" : "tối");
+      var hai = function (n) { return n < 10 ? "0" + n : String(n); };
+
+      var dat = function (id, chu) { var e = $(id); if (e) { e.textContent = chu; } };
+      dat("d-gio-thu", "Vào " + gio + ":" + phut + ", " + thu);
+      dat("d-thang", "Tháng " + (thang + 1));
+      dat("d-ngay", hai(ngay));
+      dat("d-nam", "Năm " + nam);
+      dat("d-thang-chu", THANG_CHU[thang]);
+      dat("d-thu-gio", thu + " · " + gio + ":" + phut);
+      dat("d-hen", "Hẹn gặp bạn " + buoi + " " + thu.toLowerCase() + ", "
+        + hai(ngay) + "." + hai(thang + 1) + "." + nam + ".");
+
+      var gioO = function (id, chuoi) {
+        var e = $(id), c = String(chuoi).split(":");
+        if (e) { e.innerHTML = c[0] + "<span>:</span>" + (c[1] || "00"); }
+      };
+      gioO("d-gio-1", CAU_HINH.MOC_1_GIO);
+      gioO("d-gio-2", CAU_HINH.MOC_2_GIO);
+
+      /* Tờ lịch: dựng đủ ô cho đúng tháng đó, thứ Hai đứng cột đầu, rồi đánh
+         dấu đúng ngày bằng bông mẫu đơn. */
+      var oLich = $("d-lich");
+      if (oLich) {
+        var lech = (new Date(Date.UTC(nam, thang, 1)).getUTCDay() + 6) % 7;
+        var soNgay = new Date(Date.UTC(nam, thang + 1, 0)).getUTCDate();
+        var o = [], i;
+        for (i = 0; i < lech; i++) { o.push(0); }
+        for (i = 1; i <= soNgay; i++) { o.push(i); }
+        while (o.length % 7) { o.push(0); }
+        var bong = '<svg class="day-bong" viewBox="-54 -54 108 108" aria-hidden="true">'
+          + '<use href="#bloomDam"/></svg>';
+        var h = "";
+        for (i = 0; i < o.length; i += 7) {
+          h += "<tr>";
+          for (var j = i; j < i + 7; j++) {
+            if (!o[j]) { h += '<td class="off">0</td>'; }
+            else if (o[j] === ngay) { h += '<td class="day-x">' + bong + o[j] + "</td>"; }
+            else { h += "<td>" + o[j] + "</td>"; }
+          }
+          h += "</tr>";
+        }
+        oLich.innerHTML = h;
+      }
+    }
+
     var nut1 = $("nut-ban-do");
     if (nut1) { nut1.href = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(diaChi); }
     var khung = $("vmap-frame");
