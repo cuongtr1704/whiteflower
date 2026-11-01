@@ -107,6 +107,16 @@ code{font-family:ui-monospace,"Cascadia Mono",Consolas,monospace;font-size:.86em
 }
 @keyframes sparkTw{0%,100%{opacity:.3;rotate:0deg;scale:.85}50%{opacity:.95;rotate:18deg;scale:1.1}}
 .eyebrow{font-size:.7rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold-soft);font-weight:400}
+/* Dòng mở đầu nằm trên nền trời sao nên chữ nhỏ màu nhạt đọc không ra. Riêng
+   chỗ này cho to hơn một chút.
+   Dùng font tiêu đề chứ không phải font thân bài: Be Vietnam Pro chỉ nạp tới nét
+   500, đòi đậm hơn là trình duyệt bôi đậm giả, chữ nhoè và bết nét. Cormorant có
+   sẵn nét 600 thật nên lên chữ sạch, lại hợp giọng thiệp hơn. */
+.hero .eyebrow{
+  font-family:var(--font-display);
+  font-size:clamp(.95rem,3vw,1.18rem);font-weight:600;
+  letter-spacing:.26em;color:var(--gold);
+}
 .script{font-family:var(--font-script);font-size:clamp(1.6rem,4.6vw,2.2rem);color:var(--pink);line-height:1.1;text-shadow:0 0 18px rgba(143,169,204,.35)}
 .sec-head{display:grid;gap:12px;justify-items:center;text-align:center;margin-bottom:clamp(30px,5vw,54px)}
 .sec-head h2{font-size:clamp(2rem,5.8vw,3.1rem)}
