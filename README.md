@@ -57,6 +57,18 @@ file thì trang vẫn chạy, chỉ là im.
 Bản nhạc đi kèm chỉ dùng để xem thử. Mang thiệp đi bán hay đăng công khai
 thì thay bằng bản bạn có quyền dùng.
 
+## Thẻ chia sẻ (Zalo, Messenger, Facebook)
+
+Phần này **không nằm trong `CAU_HINH`**, phải sửa tay trong `<head>` ở đầu
+`index.html`. Lý do: máy quét của Zalo hay Facebook đọc thẳng mã nguồn chứ không
+chạy JS, nên thẻ nào điền bằng script thì chúng không thấy.
+
+Sửa bốn chỗ: `<title>`, `description`, `og:title`, `og:description`, rồi thay
+`[ten-mien-cua-ban]` trong `og:url` và `og:image` bằng tên miền thật sau khi deploy.
+
+Ảnh hiện trong link chia sẻ lấy luôn `anh/chan-dung.jpg`, tức ảnh bìa của thiệp.
+Muốn dùng ảnh khác thì đổi đường dẫn trong `og:image`.
+
 ## Đưa lên mạng
 
 Phần trang tĩnh: đẩy repo lên GitHub rồi nối vào Netlify hoặc Vercel, không cần
