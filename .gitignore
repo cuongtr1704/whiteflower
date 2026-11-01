@@ -1,0 +1,9 @@
+# Dữ liệu khách mời (tên, lời chúc) — tuyệt đối không đưa lên repo
+data/
+
+node_modules/
+*.log
+.env
+
+# Anh goc may anh (nang, chi de o may) - ban web dung anh/ da nen
+anh-goc/

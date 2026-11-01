@@ -1,0 +1,75 @@
+# Netlify: phat trang tinh tu goc repo, nhung chan cac file cua backend
+[build]
+  publish = "."
+
+[[redirects]]
+  from = "/server.js"
+  to = "/index.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/zalo.js"
+  to = "/index.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/db.js"
+  to = "/index.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/package.json"
+  to = "/index.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/README.md"
+  to = "/index.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/netlify.toml"
+  to = "/index.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/.vercelignore"
+  to = "/index.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/.env"
+  to = "/index.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/.env.example"
+  to = "/index.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/HUONG-DAN-DEPLOY.md"
+  to = "/index.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/package-lock.json"
+  to = "/index.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/.gitignore"
+  to = "/index.html"
+  status = 404
+  force = true

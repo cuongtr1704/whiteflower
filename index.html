@@ -1,0 +1,2414 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+body{margin:0;font:14px system-ui,sans-serif}
+img{max-width:100%}
+[hidden]{display:none!important}
+</style>
+<title>Thiệp Tốt Nghiệp · {{TEN}}</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="format-detection" content="telephone=no">
+<meta name="format-detection" content="date=no,address=no,email=no">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@200;300;400;500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Dancing+Script:wght@600;700&display=swap">
+<style>
+:root{
+  /* giấy nhám trắng khói */
+  --sky-0:#EFE9DD;  --sky-1:#F7F3EA;  --sky-2:#FBF8F2;
+  --fg:#2B4467;
+  --fg-soft:#5E7797;
+  /* mực xanh phấn thay cho vàng */
+  --gold:#5A7CA6;
+  --gold-bright:#2B4467;
+  --gold-soft:#7D99BC;
+  --gold-line:rgba(90,124,166,.26);
+  --gold-line-strong:rgba(90,124,166,.46);
+  --teal:#8AA7C6;  --pink:#8FA9CC;  --accent:#6C8FBC;  --accent-deep:#3C5D88;
+  --card:#FFFFFF;
+  --card-2:#F4EFE5;
+  --paper:#FDFBF6;  --paper-2:#EFE8DA;
+  --paper-ink:#2B4467;
+  --paper-soft:#7D8CA3;
+  --shadow:0 18px 40px -24px rgba(43,68,103,.3);
+  --shadow-lift:0 30px 60px -28px rgba(43,68,103,.38);
+  --font-display:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --font-script:"Dancing Script","Cormorant Garamond",cursive;
+  --font-body:"Be Vietnam Pro","Segoe UI",system-ui,-apple-system,sans-serif;
+  color-scheme:light;
+}
+
+*{box-sizing:border-box}
+body{
+  background:var(--sky-1);color:var(--fg);
+  font-family:var(--font-body);font-weight:400;font-size:16px;line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+.hero>.wrap::before,.band>.wrap::before,footer>.wrap::before{
+  content:"";position:absolute;inset:-2vh -6vw;z-index:-1;pointer-events:none;
+  background:radial-gradient(62% 58% at 50% 50%,rgba(247,243,234,.82) 0%,rgba(247,243,234,.58) 48%,rgba(247,243,234,0) 78%);
+}
+.hero-inner,.sec-head,.cd-note,footer>.wrap{
+  text-shadow:0 1px 10px rgba(247,243,234,.9),0 0 26px rgba(247,243,234,.6);
+}
+.inv-name{text-shadow:none}
+.page{position:relative;z-index:2}
+body::after{  content:"";position:fixed;inset:0;z-index:2;pointer-events:none;
+  background:radial-gradient(130% 105% at 50% 38%,transparent 58%,rgba(4,6,16,.5) 100%);
+}
+.grain{  position:fixed;inset:-60px;z-index:3;pointer-events:none;
+  background-repeat:repeat;mix-blend-mode:overlay;opacity:.55;
+  animation:grainJitter .9s steps(3) infinite;
+}
+@keyframes grainJitter{
+  0%,100%{transform:translate(0,0)}
+  33%{transform:translate(-22px,14px)}
+  66%{transform:translate(14px,-18px)}
+}
+.wrap{
+  max-width:920px;margin-inline:auto;position:relative;
+  padding-left:max(16px,env(safe-area-inset-left,0px));
+  padding-right:max(16px,env(safe-area-inset-right,0px));
+}
+.band{position:relative;overflow:hidden}
+.band>.wrap{padding-block:clamp(52px,9.5vw,112px)}
+.band--tight>.wrap{padding-top:clamp(6px,1.4vw,16px)}
+h1,h2,h3{font-family:var(--font-display);font-weight:600;text-wrap:balance;margin:0;line-height:1.14;color:var(--fg)}
+p{margin:0}
+a{color:var(--gold)}
+code{font-family:ui-monospace,"Cascadia Mono",Consolas,monospace;font-size:.86em}
+
+.sky{
+  position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;
+  background:
+    radial-gradient(120% 80% at 70% -10%,var(--sky-2) 0%,transparent 58%),
+    radial-gradient(90% 60% at 12% 106%,#EDE6D8 0%,transparent 62%),
+    linear-gradient(180deg,var(--sky-1) 0%,var(--sky-0) 100%);
+}
+#sky-cv{position:absolute;inset:0;width:100%;height:100%;display:block}
+.bq{
+  position:absolute;width:clamp(178px,27vw,340px);height:auto;
+  opacity:.95;filter:drop-shadow(0 4px 12px rgba(43,68,103,.09));
+  transform-origin:50% 50%;
+  animation:bqSway 11s ease-in-out infinite;
+}
+.bq--tl{left:-12px;top:-12px}
+.bq--tr{right:-12px;top:-12px;scale:-1 1;animation-delay:-3.4s}
+.bq--bl{left:-12px;bottom:-12px;scale:1 -1;animation-delay:-6.2s}
+.bq--br{right:-12px;bottom:-12px;scale:-1 -1;animation-delay:-8.8s}
+@keyframes bqSway{0%,100%{rotate:0deg}50%{rotate:1.4deg}}
+@media (max-width:620px){
+  .bq{width:clamp(128px,40vw,190px);opacity:.82}
+  .bq--bl,.bq--br{opacity:.6}
+}
+@keyframes sparkTw{0%,100%{opacity:.3;rotate:0deg;scale:.85}50%{opacity:.95;rotate:18deg;scale:1.1}}
+.eyebrow{font-size:.7rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold-soft);font-weight:400}
+.script{font-family:var(--font-script);font-size:clamp(1.6rem,4.6vw,2.2rem);color:var(--pink);line-height:1.1;text-shadow:0 0 18px rgba(143,169,204,.35)}
+.sec-head{display:grid;gap:12px;justify-items:center;text-align:center;margin-bottom:clamp(30px,5vw,54px)}
+.sec-head h2{font-size:clamp(2rem,5.8vw,3.1rem)}
+.sec-head .rule{width:96px;height:1px;background:var(--gold-line-strong);position:relative}
+.sec-head .rule{overflow:visible}
+.sec-head .rule .dot-fl{
+  position:absolute;left:50%;top:50%;translate:-50% -50%;
+  width:21px;height:21px;
+}
+.sec-head h2 .fancy{
+  font-family:var(--font-script);font-style:normal;font-weight:600;
+  color:var(--pink);font-size:1.12em;padding-inline:.06em;
+  text-shadow:0 0 20px rgba(143,169,204,.35);
+}
+.divider{display:flex;align-items:center;justify-content:center;gap:16px;padding-block:clamp(20px,4vw,34px)}
+.divider .dline{height:1px;flex:1 1 0;min-width:0;max-width:170px;background:linear-gradient(90deg,transparent,var(--gold-line-strong))}
+.divider .dline:last-child{background:linear-gradient(90deg,var(--gold-line-strong),transparent)}
+.divider svg{width:30px;height:30px;flex:none;color:var(--gold);animation:sparkTw 6s ease-in-out infinite}
+
+.ph{
+  position:relative;overflow:hidden;min-width:0;max-width:100%;
+  background:radial-gradient(120% 120% at 30% 8%,rgba(255,255,255,.8),rgba(255,255,255,.6));
+  border:1px solid var(--gold-line);
+  display:grid;place-items:center;align-content:center;gap:10px;
+  padding:14px;text-align:center;
+}
+.ph::after{content:"";position:absolute;inset:9px;border:1px dashed var(--gold-line);pointer-events:none}
+.ph>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;z-index:1}
+.ph-icon{width:32px;height:32px;color:var(--accent);opacity:.75}
+.ph-hint{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--fg-soft);line-height:1.6}
+.ph-hint code{display:block;letter-spacing:.04em;text-transform:none;color:var(--gold);margin-top:3px}
+
+.paper .ph{background:var(--paper-2);border-color:rgba(74,58,52,.25)}
+.paper .ph::after{border-color:rgba(74,58,52,.3)}
+.paper .ph-hint{color:var(--paper-soft)}
+.paper .ph-hint code{color:var(--accent-deep)}
+.paper .ph-icon{color:var(--accent-deep);opacity:.6}
+
+.paper{
+  background:var(--paper);box-shadow:var(--shadow);margin:0;
+  padding:10px 10px 44px;position:relative;min-width:0;
+  rotate:var(--tilt,0deg);
+  transition:rotate .5s cubic-bezier(.2,.7,.3,1),translate .5s cubic-bezier(.2,.7,.3,1),box-shadow .5s;
+}
+.paper:hover{rotate:0deg;translate:0 -6px;box-shadow:var(--shadow-lift)}
+.paper::before{  content:"";position:absolute;left:50%;top:-12px;translate:-50% 0;rotate:-4deg;
+  width:86px;height:26px;background:rgba(255,255,255,.9);
+  border-left:1px dashed rgba(255,246,221,.35);border-right:1px dashed rgba(255,246,221,.35);
+  z-index:2;
+}
+.paper .cap{
+  position:absolute;left:10px;right:10px;bottom:9px;text-align:center;
+  font-family:var(--font-script);font-size:1.25rem;color:var(--paper-ink);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+
+.rose-defs{position:absolute;width:0;height:0;overflow:hidden}
+.hero{position:relative;overflow:hidden}
+.hero>.wrap{padding-block:clamp(56px,9vw,100px);z-index:1}
+.hero-inner{display:grid;gap:clamp(10px,1.6vw,15px);justify-items:center;text-align:center}
+@supports ((-webkit-background-clip:text) or (background-clip:text)){
+  .inv-name{
+    background:linear-gradient(105deg,#2B4467 0%,#4C709E 22%,#2B4467 40%,#86ABD2 50%,#2B4467 60%,#3C5D88 100%);
+    background-size:230% 100%;
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+    animation:shimmer 7s linear infinite;
+    filter:drop-shadow(0 0 22px rgba(122,154,192,.3));
+    text-shadow:none;
+  }
+}
+@keyframes shimmer{from{background-position:115% 0}to{background-position:-115% 0}}
+.at-time{
+  font-size:.78rem;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--gold-soft);font-weight:400;
+}
+.datebox{
+  display:grid;grid-template-columns:1fr auto 1fr;align-items:stretch;
+  width:100%;max-width:440px;margin-block:2px;
+  border-block:1px solid var(--gold-line-strong);padding-block:clamp(14px,2.8vw,20px);
+}
+.datebox span{
+  display:grid;place-items:center;
+  font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);
+  font-weight:400;line-height:1.3;text-align:center;
+  padding-inline:clamp(10px,3vw,22px);
+}
+.datebox span:first-child{border-right:1px solid var(--gold-line)}
+.datebox span:last-child{border-left:1px solid var(--gold-line)}
+.datebox b{
+  font-family:var(--font-display);font-size:clamp(2.7rem,10vw,4rem);font-weight:600;
+  color:var(--gold-bright);line-height:1;font-variant-numeric:tabular-nums;
+  text-shadow:0 0 26px rgba(122,154,192,.35);
+  display:grid;place-items:center;padding-inline:clamp(14px,4vw,30px);
+  position:relative;top:-.055em;
+}
+.at-place{font-size:.76rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-soft);margin-top:6px}
+.venue{
+  font-family:var(--font-display);font-size:clamp(1.15rem,3.4vw,1.5rem);font-weight:600;
+  color:var(--gold-bright);letter-spacing:.02em;
+}
+
+/* lịch tháng, ngày lễ đánh dấu bằng chòm sao */
+.cal{
+  max-width:390px;margin-inline:auto;
+  background:rgba(255,255,255,.72);border:1px solid var(--gold-line);border-radius:20px;
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  box-shadow:var(--shadow),inset 0 1px 0 rgba(255,255,255,.9);
+  padding:clamp(18px,4vw,28px);
+}
+.cal table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.cal th{
+  font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--gold-soft);font-weight:400;padding-bottom:10px;
+}
+.cal td{
+  text-align:center;padding:clamp(7px,1.8vw,10px) 0;width:14.28%;
+  font-size:clamp(.82rem,2.2vw,.98rem);color:var(--fg-soft);
+}
+.cal td.off{color:transparent}
+.cal td.day-x{
+  position:relative;color:var(--gold-bright);font-weight:700;
+  /* Quầng trắng sát quanh chữ: bông hoa nằm ngay sau số nên không có cái này
+     là con số chìm vào cánh. */
+  text-shadow:0 0 4px #fff,0 0 8px rgba(255,255,255,.95),0 1px 2px rgba(255,255,255,.9);
+}
+/* Quầng mờ tĩnh phía sau: mẫu đơn vành ngoài gần trắng nên nằm trên thẻ trắng
+   là chìm hẳn, phải có nền đậm hơn một chút mới đọc ra hình bông hoa. */
+.cal td.day-x::before{
+  content:"";position:absolute;left:50%;top:50%;translate:-50% -48%;
+  width:3.2em;height:3.2em;border-radius:50%;z-index:-2;
+  background:radial-gradient(circle,rgba(122,154,192,.3) 0%,rgba(122,154,192,.12) 58%,rgba(122,154,192,0) 74%);
+}
+.cal td.day-x .day-bong{
+  position:absolute;left:50%;top:50%;translate:-50% -48%;
+  width:4.2em;height:4.2em;z-index:-1;opacity:.72;
+  transform-origin:50% 50%;
+  /* Xoay đặt trên chính thẻ <svg> chứ không phải thẻ bên trong nó: ở đây phép
+     biến đổi được máy xử lý ở tầng ghép ảnh nên không phải vẽ lại bông hoa. */
+  animation:dayQuay 26s linear infinite;
+}
+@keyframes dayQuay{to{rotate:360deg}}
+.cal-head{
+  font-family:var(--font-script);font-size:clamp(1.6rem,5vw,2.1rem);color:var(--pink);
+  text-align:center;margin-bottom:14px;line-height:1.1;
+}
+.cal-note{
+  text-align:center;margin-top:14px;padding-top:14px;border-top:1px solid var(--gold-line);
+  font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-soft);
+}
+
+.iv{animation:ivUp .85s cubic-bezier(.2,.75,.25,1) calc(var(--iv,0s) + .6s) backwards}
+@keyframes ivUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+
+.rv.in{animation:flyIn .9s cubic-bezier(.16,.78,.3,1) backwards}
+.stagger.in>*{animation:flyIn .95s cubic-bezier(.16,.78,.3,1) calc(var(--i,0) * 95ms) backwards}
+@keyframes fadeOnly{from{opacity:0}to{opacity:1}}
+@keyframes flyIn{
+  from{opacity:0;transform:translate(var(--fx,0px),var(--fy,28px)) rotate(var(--fr,0deg))}
+  to{opacity:1;transform:none}
+}
+
+.cd{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(8px,2vw,20px);max-width:660px;margin-inline:auto}
+.cd div{
+  background:rgba(255,255,255,.72);border:1px solid var(--gold-line);border-radius:16px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.9);
+  padding:clamp(15px,3vw,26px) 6px;text-align:center;display:grid;gap:5px;min-width:0;
+}
+.cd b{
+  font-family:var(--font-display);font-size:clamp(2rem,8.5vw,3.4rem);font-weight:600;
+  color:var(--gold);text-shadow:0 0 18px rgba(122,154,192,.3);
+  font-variant-numeric:tabular-nums;line-height:1;display:block;
+}
+.cd b.pop{animation:pop .4s cubic-bezier(.2,.8,.3,1)}
+@keyframes pop{0%{transform:translateY(-7px);opacity:.35}100%{transform:none;opacity:1}}
+.cd small{font-size:.64rem;letter-spacing:.24em;text-transform:uppercase;color:var(--fg-soft)}
+.cd-note{
+  text-align:center;margin-top:26px;font-family:var(--font-display);font-style:italic;
+  font-size:clamp(1.1rem,3vw,1.4rem);color:var(--fg-soft);
+}
+
+.venue-strip{margin-top:clamp(26px,6vw,56px);max-width:720px;margin-inline:auto}
+.venue-strip .ph{aspect-ratio:16/9;width:100%;border-radius:18px}
+.venue-strip .ph::after{border-radius:12px}
+/* Bản đồ nằm đè lên ảnh trường. Bản đồ không hiện được thì lớp dưới lộ ra. */
+.vmap{
+  position:relative;aspect-ratio:16/9;width:100%;
+  border-radius:18px;overflow:hidden;isolation:isolate;
+}
+.vmap .ph{position:absolute;inset:0;aspect-ratio:auto;height:100%;z-index:1}
+.vmap-frame{
+  position:absolute;inset:0;width:100%;height:100%;border:0;z-index:2;
+  background:transparent;
+}
+.vmap.map-off .vmap-frame{display:none}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:clamp(14px,2.6vw,24px)}
+.tile{
+  background:rgba(255,255,255,.68);border:1px solid rgba(122,154,192,.22);border-radius:18px;
+  box-shadow:0 24px 50px -26px rgba(43,68,103,.2),inset 0 1px 0 rgba(255,255,255,.9);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  padding:clamp(22px,4vw,34px);display:grid;gap:11px;align-content:start;min-width:0;
+  transition:translate .4s cubic-bezier(.2,.7,.3,1),box-shadow .4s,border-color .4s;
+}
+.tile:hover{translate:0 -7px;box-shadow:var(--shadow-lift);border-color:var(--gold-line-strong)}
+.tile h3{font-size:1.32rem;color:var(--gold)}
+.tile .k{font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;color:var(--teal);font-weight:400}
+.tile p{color:var(--fg-soft);font-size:.96rem}
+.tile strong{font-weight:500;color:var(--fg)}
+.mini-tl{display:grid;gap:13px;margin-top:4px}
+.mini-tl p{position:relative;display:flex;align-items:baseline;gap:12px;padding-left:23px;min-width:0}
+.mini-tl p::before{
+  content:"";position:absolute;left:0;top:5px;width:9px;height:9px;rotate:45deg;
+  background:var(--teal);box-shadow:0 0 10px rgba(138,167,198,.85);
+}
+.mini-tl p:first-child::after{
+  content:"";position:absolute;left:4px;top:20px;height:14px;width:1px;background:var(--gold-line);
+}
+.mini-tl b{font-family:var(--font-display);font-weight:600;font-size:1.12rem;color:var(--gold);font-variant-numeric:tabular-nums;flex:none}
+.mini-tl span{color:var(--fg-soft);font-size:.96rem}
+.btn{
+  justify-self:start;display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  font-family:var(--font-body);font-size:.8rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;
+  padding:12px 23px;border-radius:999px;border:1px solid var(--gold-line-strong);
+  background:transparent;color:var(--gold);cursor:pointer;text-decoration:none;
+  position:relative;overflow:hidden;isolation:isolate;transition:color .3s,border-color .3s;
+}
+.btn::before{
+  content:"";position:absolute;inset:0;background:var(--accent-deep);z-index:-1;
+  translate:0 101%;transition:translate .38s cubic-bezier(.25,.8,.25,1);
+}
+.btn:hover{color:#fff;border-color:var(--accent-deep)}
+.btn:hover::before{translate:0 0}
+.btn--fill{background:var(--accent-deep);border-color:var(--accent-deep);color:#FDFBF6}
+.btn--fill::before{background:var(--accent)}
+.btn--fill:hover{color:#fff}
+.btn:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,a:focus-visible{
+  outline:2px solid var(--gold);outline-offset:3px
+}
+
+@media (max-width:560px){
+  .album{grid-template-columns:1fr;max-width:300px}
+}
+
+.form{
+  max-width:600px;margin-inline:auto;position:relative;overflow:hidden;
+  background:rgba(255,255,255,.72);
+  border:1px solid rgba(122,154,192,.25);border-radius:22px;
+  box-shadow:0 30px 70px -30px rgba(43,68,103,.22),inset 0 1px 0 rgba(255,255,255,.9);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  padding:clamp(26px,5vw,48px);display:grid;gap:24px;
+}
+.form::before{
+  content:"";position:absolute;inset:0 0 auto;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(138,167,198,.6),rgba(143,169,204,.6),transparent);
+}
+.field{display:grid;gap:9px;min-width:0}
+.field>label,.field>.lbl{font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--teal);font-weight:400}
+input,select{
+  font-family:var(--font-body);font-size:1.05rem;font-weight:400;color:var(--fg);
+  background:transparent;border:0;border-bottom:1px solid var(--gold-line-strong);
+  border-radius:0;padding:10px 2px;width:100%;min-width:0;
+  transition:border-color .3s,box-shadow .3s;
+}
+input:focus,select:focus{outline:none;border-bottom-color:var(--teal);box-shadow:0 1px 0 0 var(--teal)}
+select{cursor:pointer}
+select option{background:var(--card-2);color:var(--fg)}
+textarea{
+  font-family:var(--font-body);font-size:1rem;font-weight:400;color:var(--fg);
+  background:rgba(255,255,255,.7);border:1px solid var(--gold-line);border-radius:14px;
+  padding:14px 16px;width:100%;min-width:0;resize:vertical;min-height:100px;line-height:1.65;
+  transition:border-color .3s;
+}
+textarea:focus{outline:none;border-color:var(--teal)}
+input::placeholder,textarea::placeholder{color:var(--fg-soft);opacity:.5}
+.choice{display:flex;flex-wrap:wrap;gap:12px}
+.choice label{
+  flex:1 1 170px;min-width:0;position:relative;display:flex;align-items:center;justify-content:center;gap:9px;
+  cursor:pointer;border:1px solid var(--gold-line);border-radius:999px;
+  padding:13px 16px;background:rgba(255,255,255,.7);
+  font-size:.95rem;color:var(--fg-soft);font-weight:400;text-align:center;
+  transition:border-color .3s,background .3s,color .3s,box-shadow .3s;
+}
+.choice input{position:absolute;opacity:0;pointer-events:none}
+.choice label:has(input:checked){
+  border-color:var(--teal);color:var(--fg);background:rgba(138,167,198,.1);
+  box-shadow:0 0 18px rgba(138,167,198,.25),inset 0 0 12px rgba(138,167,198,.08);
+}
+.choice label:has(input:focus-visible){outline:2px solid var(--teal);outline-offset:3px}
+.form .btn--fill{
+  border-radius:999px;padding:15px 24px;font-size:.84rem;border:0;
+  background:linear-gradient(100deg,var(--accent-deep),var(--accent) 55%,#9EC2E4);
+  box-shadow:0 12px 30px -10px rgba(60,93,136,.55);
+  transition:transform .3s,box-shadow .3s,color .3s;
+}
+.form .btn--fill::before{background:linear-gradient(100deg,#9EC2E4,var(--accent))}
+.form .btn--fill:hover{transform:translateY(-2px);box-shadow:0 18px 40px -12px rgba(108,143,188,.65)}
+.tally{
+  text-align:center;color:var(--pink);font-family:var(--font-display);font-style:italic;
+  font-size:1.08rem;margin:calc(-1 * clamp(10px,2vw,20px)) 0 clamp(22px,4vw,36px);
+}
+.thanks{
+  display:grid;gap:15px;max-width:600px;margin-inline:auto;position:relative;overflow:hidden;
+  background:rgba(255,255,255,.72);
+  border:1px solid rgba(143,169,204,.4);border-radius:22px;
+  box-shadow:0 30px 70px -30px rgba(43,68,103,.22),inset 0 1px 0 rgba(255,255,255,.9);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  padding:clamp(26px,5vw,44px);
+}
+.thanks::before{
+  content:"";position:absolute;inset:0 0 auto;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(143,169,204,.65),rgba(138,167,198,.5),transparent);
+}
+.thanks h3{font-size:1.55rem;color:var(--gold);text-align:center}
+.thanks p{color:var(--fg-soft);font-size:.95rem}
+.thanks .btn--fill{border-radius:999px}
+.msgbox{
+  background:rgba(255,255,255,.7);border:1px solid var(--gold-line);border-radius:14px;
+  padding:17px;font-size:.92rem;white-space:pre-wrap;word-break:break-word;color:var(--fg);
+}
+.row{display:flex;flex-wrap:wrap;gap:10px}
+.contact{text-align:center;font-size:.92rem;color:var(--fg-soft)}
+.contact b{font-weight:600;color:var(--gold-bright);font-variant-numeric:lining-nums tabular-nums;letter-spacing:.07em}
+
+footer{position:relative;overflow:hidden;text-align:center}
+footer>.wrap{padding-block:clamp(48px,8vw,88px) clamp(54px,9vw,96px);display:grid;gap:18px;justify-items:center;z-index:1}
+
+/* màn mở thiệp: vào trang chỉ thấy chòm sao, bấm mới hiện thiệp */
+.gate{
+  position:fixed;inset:0;z-index:50;display:grid;place-items:center;
+  padding:max(20px,env(safe-area-inset-left,0px));
+  background:radial-gradient(70% 55% at 50% 50%,rgba(247,243,234,.3) 0%,rgba(247,243,234,.72) 100%);
+  transition:opacity .75s ease,visibility .75s;
+}
+.gate.open{opacity:0;visibility:hidden;pointer-events:none}
+html.gated,html.gated body{overflow:hidden}
+html.gated .page{opacity:0;pointer-events:none}
+html.gated .page,html.gated .page *{animation-play-state:paused!important}
+
+.constel{
+  display:grid;justify-items:center;gap:clamp(12px,3vw,20px);
+  background:none;border:0;padding:10px;margin:0;
+  cursor:pointer;-webkit-tap-highlight-color:transparent;
+  position:relative;width:max-content;
+}
+.constel:focus-visible{outline:2px solid var(--gold);outline-offset:8px;border-radius:12px}
+.blossom{
+  width:clamp(190px,62vw,330px);height:auto;color:var(--gold);
+  transition:scale .45s cubic-bezier(.2,.7,.3,1),filter .45s;
+  filter:drop-shadow(0 6px 18px rgba(43,68,103,.18));
+}
+.constel:hover .blossom,.constel:active .blossom{
+  scale:1.06;filter:drop-shadow(0 10px 26px rgba(43,68,103,.26));
+}
+.blossom .bl-wash,.blossom .bl-r1,.blossom .bl-r2,.blossom .bl-r3,
+.blossom .bl-r4,.blossom .bl-r5,.blossom .bl-seed{
+  transform-origin:0 0;
+  animation:bloomIn .85s cubic-bezier(.22,1.2,.36,1) backwards;
+}
+.blossom .bl-wash{animation-delay:0s;animation-duration:1.2s}
+.blossom .bl-r1{animation-delay:.08s}
+.blossom .bl-r2{animation-delay:.22s}
+.blossom .bl-r3{animation-delay:.34s}
+.blossom .bl-r4{animation-delay:.46s}
+.blossom .bl-r5{animation-delay:.56s}
+.blossom .bl-seed{animation-delay:.68s}
+@keyframes bloomIn{
+  from{opacity:0;scale:.32;rotate:-20deg}
+  to{opacity:1;scale:1;rotate:0deg}
+}
+.bring{transform-origin:0 0;animation:ringSpin 34s linear infinite,bloomIn .6s ease .1s backwards}
+@keyframes ringSpin{to{rotate:360deg}}
+.constel-hint{
+  font-family:var(--font-body);font-size:clamp(.72rem,2.6vw,.86rem);letter-spacing:.3em;
+  text-indent:.3em;text-transform:uppercase;color:var(--gold);white-space:nowrap;font-weight:500;
+  animation:hintBreathe 2.6s ease-in-out infinite;
+  transition:opacity .5s,translate .5s;
+}
+@keyframes hintBreathe{0%,100%{opacity:.5}50%{opacity:1}}
+.constel.blown{pointer-events:none;animation:constelBlow .78s cubic-bezier(.3,.85,.3,1) forwards}
+@keyframes bongHienRa{
+  from{opacity:0;scale:.78}
+  to{opacity:1;scale:1}
+}
+@keyframes constelBlowNhe{
+  0%{opacity:1;scale:1}
+  22%{opacity:1;scale:1.18}
+  100%{opacity:0;scale:1.7}
+}
+@keyframes constelBlow{
+  0%{opacity:1;scale:1;filter:drop-shadow(0 0 10px rgba(122,154,192,.25)) blur(0)}
+  22%{opacity:1;scale:1.2;filter:drop-shadow(0 0 34px rgba(122,154,192,.95)) blur(0)}
+  100%{opacity:0;scale:1.75;filter:drop-shadow(0 0 0 rgba(122,154,192,0)) blur(7px)}
+}
+.constel.blown .constel-hint{opacity:0;transition:opacity .2s}
+.constel.gone{display:none}
+footer .script{font-size:clamp(2rem,6vw,2.9rem)}
+footer p{color:var(--fg-soft);max-width:44ch;font-size:.95rem;text-wrap:balance}
+footer .fline{
+  margin:0;max-width:none;white-space:nowrap;
+  /* Moi cau nam gon mot dong, khong xuong dong - nen cau nao cung phai ngan. */
+  font-size:clamp(.82rem,3.4vw,.98rem);line-height:1.75;
+}
+footer .fline--date{color:var(--gold-soft);font-weight:500;margin-top:6px}
+
+.gsap-on .iv{animation:none}
+
+/* Trên điện thoại chỉ cho nội dung hiện dần. Trôi lên trôi xuống lúc cuộn
+   vừa rối mắt vừa dễ giật trên máy yếu. */
+@media (max-width:760px){
+  .rv.in,.stagger.in>*{animation-name:fadeOnly;animation-timing-function:ease-out}
+  .iv{animation-name:fadeOnly}
+
+  /* Bốn chùm hoa góc là SVG rất nhiều nét. Trên điện thoại cho đứng yên và bỏ
+     bóng đổ. Lớp loang mờ bên trong phải gỡ bằng JS chứ không phải ở đây: nội
+     dung chùm hoa được nhân bản qua <use> nên nằm trong shadow tree, CSS của
+     trang không với tới. */
+  .bq{animation:none;filter:none}
+  /* Lớp kính mờ sau thẻ cũng là thứ nặng nhất nhì trên máy yếu. */
+  .cal,.tile,.form,.thanks,.invite,.gcard{backdrop-filter:none;-webkit-backdrop-filter:none}
+
+  /* Hiệu ứng nổ khi bấm hoa: bản đầy đủ animate blur() và drop-shadow() đổi
+     bán kính, trên bông hoa SVG mấy chục cánh tô gradient, lại phóng to 1,75
+     lần cùng lúc - mỗi khung hình máy phải dựng lại cả bông rồi làm nhoè hai
+     lần. Trên điện thoại chỉ phóng to và mờ dần, hai thứ này máy xử lý ở tầng
+     ghép ảnh nên không phải vẽ lại gì. */
+  .blossom{filter:none}
+  .constel.blown{animation-name:constelBlowNhe}
+
+  /* Mọi hoạt ảnh đặt BÊN TRONG thẻ svg đều buộc trình duyệt vẽ lại cả bông
+     hoa - ba chục cánh tô gradient - ở từng khung hình, vì phép biến đổi bên
+     trong SVG không được tăng tốc như trên thẻ HTML. Vòng chấm thì xoay mãi
+     không nghỉ nên nó ngốn máy suốt lúc chờ bấm. Trên điện thoại cho đứng yên,
+     bỏ lớp loang mờ, và cho cả bông hiện ra một lượt thay vì nở từng lớp. */
+  .bring{animation:none}
+  .blossom .bl-wash{display:none}
+  .blossom .bl-wash,.blossom .bl-r1,.blossom .bl-r2,.blossom .bl-r3,
+  .blossom .bl-r4,.blossom .bl-r5,.blossom .bl-seed{animation:none}
+  .blossom{animation:bongHienRa .9s cubic-bezier(.22,1.1,.36,1) backwards}
+  /* Vệt sáng lướt qua tên chạy bằng background-position trên nền cắt theo chữ,
+     nghĩa là vẽ lại cả dòng tên mỗi khung hình. Trên điện thoại thì thôi. */
+  .inv-name{animation:none}
+  /* Cuộn phim vẫn chạy, nhưng báo trước cho trình duyệt để nó tách lớp riêng,
+     khỏi vẽ lại vùng xung quanh theo. */
+  .film-track{will-change:transform}
+}
+.gsap-on .rv.in,.gsap-on .stagger.in>*{animation:none}
+
+@media (max-width:560px){
+  .cd{grid-template-columns:repeat(4,1fr);gap:6px}
+  .cd div{padding:12px 2px}
+  .cd b{font-size:clamp(1.4rem,7.4vw,2rem)}
+  .cd small{font-size:.5rem;letter-spacing:.08em}
+}
+
+.paper .ph>img{transition:scale .7s cubic-bezier(.2,.7,.3,1)}
+.paper:hover .ph>img{scale:1.05}
+
+/* ===== hero: ảnh lớn, tựa đề đè lên ảnh ===== */
+/* khung rỗng kiểu thẻ bài: chỉ vàng mảnh, hoạ tiết chạm 4 góc, huy hiệu trên dưới */
+.hero-photo{
+  position:relative;width:min(470px,86vw);
+  margin-block:clamp(22px,4.5vw,34px) clamp(18px,3.6vw,26px);
+}
+
+.hp-inner{
+  position:relative;border-radius:3px;overflow:hidden;
+  box-shadow:0 0 0 1px rgba(122,154,192,.5),0 24px 56px -26px rgba(43,68,103,.25);
+}
+.hero-photo .ph{aspect-ratio:3/4;width:100%;border:0;border-radius:0}
+.hero-photo .ph::after{display:none}
+.orn,.crest,.side{
+  position:absolute;z-index:4;pointer-events:none;color:var(--gold);
+  filter:drop-shadow(0 0 7px rgba(122,154,192,.3));
+}
+.orn{width:clamp(40px,9vw,58px);height:clamp(40px,9vw,58px)}
+.orn--tl{left:-1px;top:-1px}
+.orn--tr{right:-1px;top:-1px;scale:-1 1}
+.orn--br{right:-1px;bottom:-1px;rotate:180deg}
+.orn--bl{left:-1px;bottom:-1px;scale:1 -1}
+.crest{
+  left:50%;width:clamp(78px,19vw,100px);height:auto;color:var(--gold-bright);
+}
+.crest--top{top:0;translate:-50% -50%}
+.crest--bot{bottom:0;translate:-50% 50%;rotate:180deg}
+.side{
+  top:50%;width:clamp(13px,3vw,18px);height:auto;translate:0 -50%;
+}
+.side--l{left:0;margin-left:-.5px}
+.side--r{right:0;margin-right:-.5px}
+
+/* ===== khối thân mời ===== */
+.invite{
+  max-width:640px;margin-inline:auto;text-align:center;
+  display:grid;justify-items:center;gap:clamp(9px,1.8vw,14px);
+  background:rgba(255,255,255,.72);border:1px solid var(--gold-line);border-radius:24px;
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  box-shadow:var(--shadow),inset 0 1px 0 rgba(255,255,255,.9);
+  padding:clamp(28px,6vw,52px) clamp(20px,5vw,46px);
+}
+.inv-line{
+  font-size:clamp(.82rem,2.4vw,.95rem);letter-spacing:.14em;text-transform:uppercase;
+  color:var(--fg-soft);max-width:28ch;line-height:1.7;text-wrap:balance;
+}
+.inv-name{
+  font-family:var(--font-display);font-size:clamp(2.2rem,8vw,3.6rem);font-weight:600;
+  color:var(--gold-bright);line-height:1.1;text-wrap:balance;
+}
+.inv-rule{width:70px;height:1px;background:var(--gold-line-strong);margin-block:4px}
+.addr{color:var(--fg-soft);font-size:clamp(.94rem,2.4vw,1.04rem);line-height:1.7;text-wrap:balance}
+.invite .btn{justify-self:center;margin-top:8px}
+
+/* ===== chỉ đường, gửi xe, liên hệ ===== */
+.guide{
+  display:grid;gap:clamp(14px,2.4vw,20px);max-width:900px;margin-inline:auto;
+}
+.gcard{
+  position:relative;display:grid;
+  grid-template-columns:minmax(0,190px) minmax(0,1fr);
+  gap:clamp(16px,3.4vw,38px);align-items:start;min-width:0;
+  background:rgba(255,255,255,.72);border:1px solid var(--gold-line);border-radius:20px;
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  box-shadow:var(--shadow),inset 0 1px 0 rgba(255,255,255,.9);
+  padding:clamp(26px,3.8vw,34px) clamp(24px,3.6vw,38px);
+  transition:translate .4s cubic-bezier(.2,.7,.3,1),border-color .4s;
+}
+.gcard:hover{translate:0 -4px;border-color:var(--gold-line-strong)}
+.gnum{
+  position:absolute;top:clamp(16px,2.6vw,22px);right:clamp(22px,3.4vw,32px);
+  font-family:var(--font-display);font-size:2.3rem;font-weight:600;
+  color:var(--teal);line-height:1;opacity:.26;
+}
+.gcard h3{
+  font-family:var(--font-display);font-size:clamp(1.6rem,4.2vw,2rem);
+  font-weight:600;color:var(--gold-bright);line-height:1.15;
+}
+.gbody{display:grid;gap:clamp(14px,2.4vw,20px);align-items:start;min-width:0}
+/* chua cho cho so thu tu o goc phai, keo doan mo dau khoi chui xuong duoi no */
+.gbody>p:first-child{padding-right:clamp(38px,5vw,58px)}
+.gslot{display:grid;gap:4px;align-content:start;min-width:0}
+.gcard p{
+  color:var(--fg-soft);font-size:1.06rem;line-height:1.65;
+  font-variant-numeric:lining-nums tabular-nums;
+}
+.glabel{
+  font-size:.68rem!important;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--teal);font-weight:600;
+}
+.glabel em{font-style:normal;opacity:.72;letter-spacing:.14em}
+.gaddr{font-size:1.14rem!important;font-weight:600;color:var(--fg);line-height:1.4;text-wrap:balance}
+.gcall{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px}
+/* Hai hàng số dùng CHUNG một lưới, nhờ vậy hai nút rơi vào cùng một cột và
+   thẳng hàng với nhau. Để mỗi hàng một lưới riêng thì nút sẽ lệch theo bề
+   ngang của từng dãy số, vì font không có bộ chữ số đều nhau. */
+.gcalls{
+  display:grid;grid-template-columns:max-content max-content;
+  column-gap:clamp(12px,2.4vw,20px);row-gap:2px;align-items:center;min-width:0;
+}
+/* Nhãn tên trải hết hàng của nó, còn số và nút CHUNG một hàng - kể cả trên
+   điện thoại. Nhờ vậy nút nằm ngang đúng dãy số, và hai nút cùng ở cột hai
+   nên thẳng nhau. */
+.gcalls .glabel{grid-column:1/-1;white-space:nowrap}
+.gcalls .gphone{grid-column:1}
+.gcalls .btn{grid-column:2;margin:0}
+.gcalls>:nth-child(1){grid-row:1}
+.gcalls>:nth-child(2){grid-row:2}
+.gcalls>:nth-child(3){grid-row:2}
+.gcalls>:nth-child(4){grid-row:3;margin-top:16px}
+.gcalls>:nth-child(5){grid-row:4}
+.gcalls>:nth-child(6){grid-row:4}
+/* Nút phụ: nhỏ gọn để đứng vừa cạnh dãy số. */
+.btn--nho{
+  padding:8px 18px;font-size:.72rem;letter-spacing:.12em;
+}
+@media (max-width:420px){
+  /* Màn hẹp: nhãn co lại cho gọn một dòng, khỏi xuống dòng. */
+  .gcalls .glabel{font-size:.6rem!important;letter-spacing:.1em}
+  .gcalls .glabel em{letter-spacing:.06em}
+  .btn--nho{padding:7px 14px;font-size:.66rem;letter-spacing:.08em}
+}
+@media (max-width:365px){
+  /* Máy hẹp nhất (iPhone SE): co thêm một nấc, nhãn dài nhất mới vừa ô. */
+  .gcalls .glabel{font-size:.55rem!important;letter-spacing:.06em}
+  .gcalls .glabel em{letter-spacing:.03em}
+}
+
+/* ===== album cuối trang: 2 ảnh vuông + 1 ảnh dọc ===== */
+.gallery{display:grid;gap:clamp(10px,2vw,18px);max-width:820px;margin-inline:auto}
+.mos{display:grid;gap:clamp(10px,2vw,18px)}
+.mos--a{grid-template-columns:1fr 1.22fr}
+.mos--a .sq:nth-child(1){grid-column:1;grid-row:1}
+.mos--a .sq:nth-child(2){grid-column:1;grid-row:2}
+.mos--a .tall{grid-column:2;grid-row:1/3}
+.mos .ph{
+  width:100%;border-radius:4px;border-color:var(--gold-line);box-shadow:var(--shadow);
+  transition:translate .5s cubic-bezier(.2,.7,.3,1),box-shadow .5s;
+}
+.mos .ph::after{inset:8px;border-radius:2px}
+.mos .ph:hover{translate:0 -6px;box-shadow:var(--shadow-lift);z-index:2}
+.mos .ph>img{transition:scale .7s cubic-bezier(.2,.7,.3,1)}
+.mos .ph:hover>img{scale:1.06}
+.sq{aspect-ratio:1/1}
+.tall{height:100%}
+
+/* ===== khối ảnh lớn + cuộn phim ===== */
+.reel{
+  display:grid;grid-template-columns:minmax(0,1fr) clamp(104px,20vw,164px);
+  gap:clamp(16px,3vw,30px);align-items:stretch;max-width:860px;margin-inline:auto;
+}
+.rbig{margin:0;min-width:0}
+.rbig .ph{
+  aspect-ratio:3/4;width:100%;border-radius:4px;
+  border:1px solid var(--gold-line);box-shadow:var(--shadow-lift);
+}
+.rbig .ph::after{inset:9px;border-radius:2px}
+.film{
+  position:relative;overflow:hidden;border-radius:4px;min-height:0;
+  background:#2B3444;
+  box-shadow:var(--shadow-lift);
+  --hole:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='22'%3E%3Crect width='6' height='9' x='2' y='6' rx='1.6' fill='%23F7F3EA'/%3E%3C/svg%3E");
+}
+.film::before,.film::after{
+  content:"";position:absolute;top:0;bottom:0;width:clamp(8px,1.6vw,13px);
+  background-image:var(--hole);background-repeat:repeat-y;
+  background-size:100% 22px;opacity:.9;z-index:2;
+}
+.film::before{left:0}
+.film::after{right:0}
+.film-track{
+  position:absolute;top:0;left:clamp(8px,1.6vw,13px);right:clamp(8px,1.6vw,13px);
+  display:grid;gap:clamp(7px,1.4vw,11px);padding-block:clamp(7px,1.4vw,11px);
+  animation:reelRoll 47s linear infinite;
+}
+@keyframes reelRoll{from{translate:0 0}to{translate:0 -50%}}
+.fcell{min-width:0}
+.fcell .ph{
+  aspect-ratio:3/4;width:100%;border-radius:2px;
+  border-color:rgba(255,255,255,.3);
+  background:radial-gradient(130% 110% at 30% 8%,rgba(255,255,255,.14),rgba(255,255,255,.05));
+  padding:8px;
+}
+.fcell .ph::after{inset:5px;border-color:rgba(255,255,255,.22)}
+.fcell .ph-icon{width:22px;height:22px;color:#BBD0E4;opacity:.8}
+.fcell .ph-hint{font-size:.5rem;letter-spacing:.08em;color:#C9D6E6}
+.fcell .ph-hint code{color:#E6EEF7;font-size:.9em}
+@media (max-width:560px){
+  .reel{grid-template-columns:minmax(0,1fr) clamp(86px,26vw,110px);gap:12px}
+}
+
+/* ===== lịch trình: trục dọc, hai bên so le ===== */
+.sched{
+  position:relative;display:grid;gap:clamp(44px,10vw,80px);
+  max-width:720px;margin-inline:auto;padding-block:clamp(8px,2vw,18px);
+}
+.sched::before{
+  content:"";position:absolute;left:50%;top:6px;bottom:6px;width:1px;translate:-50% 0;
+  background:linear-gradient(180deg,transparent,var(--gold-line-strong) 14%,var(--gold-line-strong) 86%,transparent);
+}
+.srow{
+  position:relative;display:grid;grid-template-columns:1fr 1fr;
+  gap:clamp(26px,8vw,58px);align-items:center;
+}
+.srow::before{
+  content:"";position:absolute;left:50%;top:50%;translate:-50% -50%;rotate:45deg;
+  width:11px;height:11px;background:var(--teal);
+  box-shadow:0 0 13px rgba(138,167,198,.9);z-index:1;
+}
+.srow--a .sicon{grid-column:1;justify-self:end}
+.srow--a .sinfo{grid-column:2;text-align:left}
+.srow--b .sinfo{grid-column:1;text-align:right}
+.srow--b .sicon{grid-column:2;justify-self:start}
+.sicon{
+  position:relative;display:grid;place-items:center;
+  width:clamp(84px,21vw,112px);aspect-ratio:1;
+  border-radius:50%;border:1px solid var(--gold-line-strong);color:var(--gold-bright);
+  background:radial-gradient(circle at 50% 32%,rgba(122,154,192,.17),transparent 70%);
+  box-shadow:0 0 34px rgba(122,154,192,.22),inset 0 1px 0 rgba(255,255,255,.9);
+}
+.sicon::before{
+  content:"";position:absolute;inset:-9px;border-radius:50%;
+  border:1px solid var(--gold-line);
+}
+.sicon::after{
+  content:"";position:absolute;inset:7px;border-radius:50%;
+  border:1px dashed rgba(122,154,192,.18);
+}
+.sicon svg{width:56%;height:56%;filter:drop-shadow(0 0 8px rgba(122,154,192,.35))}
+.sinfo{display:grid;gap:4px;min-width:0}
+.stime{
+  font-family:var(--font-display);font-size:clamp(2.2rem,7.4vw,3.1rem);font-weight:600;
+  color:var(--gold-bright);line-height:1;font-variant-numeric:lining-nums tabular-nums;
+  text-shadow:0 0 24px rgba(122,154,192,.3);
+}
+.stime span{opacity:.45}
+.sname{
+  font-size:clamp(.94rem,2.5vw,1.06rem)!important;color:var(--fg);font-weight:500;
+  line-height:1.5;text-wrap:balance;
+}
+.stag{
+  font-size:.8rem!important;font-style:italic;color:var(--pink);letter-spacing:.03em;
+}
+}
+/* chặn nốt trường hợp trình duyệt vẫn tự biến số thành link gọi */
+.gphone a,.contact a,.gphone b a,.contact b a{
+  color:inherit!important;text-decoration:none!important;
+  -webkit-text-decoration:none!important;pointer-events:none;
+}
+.gphone b{
+  font-family:var(--font-body);font-size:clamp(1.3rem,3.9vw,1.58rem);font-weight:600;
+  color:var(--gold-bright);letter-spacing:.07em;
+  font-variant-numeric:lining-nums tabular-nums;
+  text-shadow:0 0 20px rgba(122,154,192,.32);
+}
+.gcard .btn{align-self:center;margin:0}
+.gnote{
+  grid-column:1/-1;font-size:.95rem!important;font-style:italic;color:var(--gold-soft);
+  line-height:1.6;border-top:1px solid var(--gold-line);padding-top:14px;margin-top:4px;
+}
+
+/* ===== lịch + ảnh cạnh bên ===== */
+.cal-row{
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.78fr);
+  gap:clamp(22px,5vw,52px);align-items:center;max-width:860px;margin-inline:auto;
+}
+.cal{margin:0;max-width:none;min-width:0}
+.cal td,.cal th{min-width:0}
+.cal-photos{display:grid;align-content:center;min-width:0}
+.cal-photos .cal-photo{width:min(86%,292px)}
+.cal-photos .cal-photo:first-child{justify-self:start}
+/* tấm sau gối lên tấm trước cho khỏi cao lênh khênh so với tờ lịch */
+.cal-photos .cal-photo:last-child{justify-self:end;margin-top:-28%;z-index:2}
+.cal-photos .cal-photo:hover{z-index:3}
+.cal-photo .ph{aspect-ratio:3/4;width:100%}
+
+/* tấm ảnh khép lại: để ngang cho vừa khuôn hình chụp sẵn */
+footer .ph--wide{
+  width:min(100%,clamp(280px,78vw,560px));aspect-ratio:3/2;border-radius:6px;padding:10px;
+  box-shadow:0 0 34px rgba(122,154,192,.15),var(--shadow);border-color:var(--gold-line-strong);
+}
+.ph--wide::after{inset:7px;border-radius:3px}
+.ph--wide .ph-icon{width:26px;height:26px}
+.ph--wide .ph-hint{font-size:.58rem}
+
+@media (max-width:880px){
+  .cal-row{grid-template-columns:1fr;justify-items:center}
+  .cal{width:min(400px,100%)}
+  .cal-photos{width:min(330px,80vw)}
+  .cal-photos .cal-photo{width:min(84%,250px)}
+}
+@media (max-width:720px){
+  .gcard{grid-template-columns:1fr;gap:14px}
+  .gcard h3{padding-right:56px}
+  .gbody{grid-template-columns:1fr;gap:16px}
+}
+@media (max-width:460px){
+  .duo{gap:14px}
+  .gallery,.mos{gap:9px}
+}
+</style>
+</head>
+<body>
+
+<div class="sky" aria-hidden="true">
+  <canvas id="sky-cv"></canvas>
+  <svg class="bq bq--tl" viewBox="-12 -12 232 204"><use href="#bouquet"/></svg>
+  <svg class="bq bq--tr" viewBox="-12 -12 232 204"><use href="#bouquet"/></svg>
+  <svg class="bq bq--bl" viewBox="-12 -12 232 204"><use href="#bouquet"/></svg>
+  <svg class="bq bq--br" viewBox="-12 -12 232 204"><use href="#bouquet"/></svg>
+</div>
+
+<svg class="rose-defs" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="pt1" x1="0" y1="0" x2=".1" y2="1">
+      <stop offset="0" stop-color="#FDFEFF"/><stop offset=".55" stop-color="#EAF2F9"/><stop offset="1" stop-color="#C6D9EB"/>
+    </linearGradient>
+    <linearGradient id="pt2" x1="0" y1="0" x2=".1" y2="1">
+      <stop offset="0" stop-color="#F8FBFD"/><stop offset=".52" stop-color="#DCE9F4"/><stop offset="1" stop-color="#AEC8E1"/>
+    </linearGradient>
+    <linearGradient id="pt3" x1="0" y1="0" x2=".1" y2="1">
+      <stop offset="0" stop-color="#F1F7FB"/><stop offset=".5" stop-color="#CCDFEF"/><stop offset="1" stop-color="#95B6D6"/>
+    </linearGradient>
+    <linearGradient id="pt4" x1="0" y1="0" x2=".1" y2="1">
+      <stop offset="0" stop-color="#E7F0F8"/><stop offset=".48" stop-color="#B9D2E8"/><stop offset="1" stop-color="#7BA0C8"/>
+    </linearGradient>
+    <linearGradient id="pt5" x1="0" y1="0" x2=".1" y2="1">
+      <stop offset="0" stop-color="#D8E6F3"/><stop offset=".46" stop-color="#A4C1DF"/><stop offset="1" stop-color="#6B92BE"/>
+    </linearGradient>
+    <radialGradient id="fmnG" cx=".34" cy=".22" r=".9">
+      <stop offset="0" stop-color="#FCFDFE"/><stop offset=".34" stop-color="#DAE8F4"/>
+      <stop offset=".72" stop-color="#9DBCD9"/><stop offset="1" stop-color="#6E90B8"/>
+    </radialGradient>
+    <radialGradient id="fmnG2" cx=".4" cy=".3" r=".86">
+      <stop offset="0" stop-color="#FDFEFF"/><stop offset=".44" stop-color="#E9F1F8"/><stop offset="1" stop-color="#BDD2E6"/>
+    </radialGradient>
+    <radialGradient id="washG" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#8FB2D2" stop-opacity=".26"/>
+      <stop offset=".6" stop-color="#AEC8E1" stop-opacity=".1"/>
+      <stop offset="1" stop-color="#AEC8E1" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="leafG" x1=".1" y1="1" x2=".8" y2="0">
+      <stop offset="0" stop-color="#9DB79B"/><stop offset="1" stop-color="#CBDCC8"/>
+    </linearGradient>
+    <filter id="soft" x="-45%" y="-45%" width="190%" height="190%"><feGaussianBlur stdDeviation="1.4"/></filter>
+    <filter id="softer" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="5"/></filter>
+    <path id="pt" d="M0 0 C-8.6 -3.6 -13.6 -14 -11 -23.4 C-9 -30.4 -3.8 -33.6 -1.5 -30.4 L0 -27.6 L1.5 -30.4 C3.8 -33.6 9 -30.4 11 -23.4 C13.6 -14 8.6 -3.6 0 0 Z" stroke="rgba(84,118,158,.3)" stroke-width=".5" stroke-linejoin="round"/>
+    <path id="ptIn" d="M0 0 C-6.4 -3.4 -9.6 -11 -7.6 -17.4 C-6 -22.4 -1.8 -24.6 0 -22.2 C1.8 -24.6 6 -22.4 7.6 -17.4 C9.6 -11 6.4 -3.4 0 0 Z" stroke="rgba(74,106,146,.34)" stroke-width=".45" stroke-linejoin="round"/>
+    <g id="bloom">
+      <g class="bl-wash" filter="url(#softer)"><circle r="54" fill="url(#washG)"/></g>
+      <g class="bl-r1" fill="url(#pt1)" opacity=".92">
+        <use href="#pt" transform="rotate(1.0) scale(1.363)"/>
+        <use href="#pt" transform="rotate(48.1) scale(1.422)"/>
+        <use href="#pt" transform="rotate(88.1) scale(1.482)"/>
+        <use href="#pt" transform="rotate(135.2) scale(1.339)"/>
+        <use href="#pt" transform="rotate(182.3) scale(1.398)"/>
+        <use href="#pt" transform="rotate(222.3) scale(1.458)"/>
+        <use href="#pt" transform="rotate(269.4) scale(1.517)"/>
+        <use href="#pt" transform="rotate(316.4) scale(1.375)"/>
+      </g>
+      <g class="bl-r2" fill="url(#pt2)" opacity=".95">
+        <use href="#pt" transform="rotate(27.1) scale(1.060)"/>
+        <use href="#pt" transform="rotate(73.6) scale(1.106)"/>
+        <use href="#pt" transform="rotate(127.1) scale(1.152)"/>
+        <use href="#pt" transform="rotate(180.6) scale(1.042)"/>
+        <use href="#pt" transform="rotate(227.0) scale(1.088)"/>
+        <use href="#pt" transform="rotate(280.5) scale(1.134)"/>
+        <use href="#pt" transform="rotate(334.0) scale(1.180)"/>
+      </g>
+      <g class="bl-r3" fill="url(#pt3)" opacity=".97">
+        <use href="#pt" transform="rotate(46.1) scale(0.795)"/>
+        <use href="#pt" transform="rotate(108.2) scale(0.830)"/>
+        <use href="#pt" transform="rotate(170.3) scale(0.864)"/>
+        <use href="#pt" transform="rotate(225.3) scale(0.781)"/>
+        <use href="#pt" transform="rotate(287.4) scale(0.816)"/>
+        <use href="#pt" transform="rotate(349.4) scale(0.850)"/>
+      </g>
+      <g class="bl-r4" fill="url(#pt4)" opacity="1">
+        <use href="#ptIn" transform="rotate(14.2) scale(0.587)"/>
+        <use href="#ptIn" transform="rotate(88.3) scale(0.612)"/>
+        <use href="#ptIn" transform="rotate(155.3) scale(0.638)"/>
+        <use href="#ptIn" transform="rotate(229.4) scale(0.577)"/>
+        <use href="#ptIn" transform="rotate(303.4) scale(0.602)"/>
+      </g>
+      <g class="bl-r5" fill="url(#pt5)" opacity="1">
+        <use href="#ptIn" transform="rotate(42.3) scale(0.398)"/>
+        <use href="#ptIn" transform="rotate(127.3) scale(0.415)"/>
+        <use href="#ptIn" transform="rotate(219.4) scale(0.432)"/>
+        <use href="#ptIn" transform="rotate(311.4) scale(0.391)"/>
+      </g>
+      <g class="bl-seed">
+        <circle r="4.6" fill="#E9D8AC"/>
+        <circle r="2" fill="#CDAF77"/>
+        <g stroke="#C9AE76" stroke-width=".65" stroke-linecap="round" fill="none" opacity=".9">
+          <path d="M0 0 2.6-5M0 0-3.1-4.3M0 0 4.7-2M0 0-4.9 1.3M0 0 1.5 5.2M0 0-1.9 4.7"/>
+        </g>
+        <g fill="#F2E2AE">
+          <circle cx="2.7" cy="-5.4" r="1.05"/><circle cx="-3.3" cy="-4.6" r=".95"/>
+          <circle cx="5" cy="-2.1" r=".95"/><circle cx="-5.2" cy="1.4" r="1.05"/>
+          <circle cx="1.6" cy="5.6" r=".95"/><circle cx="-2" cy="5" r=".95"/>
+        </g>
+      </g>
+    </g>
+    <path id="ptD" d="M0 0 C-8.6 -3.6 -13.6 -14 -11 -23.4 C-9 -30.4 -3.8 -33.6 -1.5 -30.4 L0 -27.6 L1.5 -30.4 C3.8 -33.6 9 -30.4 11 -23.4 C13.6 -14 8.6 -3.6 0 0 Z" stroke="rgba(52,84,126,.5)" stroke-width="1.5" stroke-linejoin="round"/>
+    <path id="ptInD" d="M0 0 C-6.4 -3.4 -9.6 -11 -7.6 -17.4 C-6 -22.4 -1.8 -24.6 0 -22.2 C1.8 -24.6 6 -22.4 7.6 -17.4 C9.6 -11 6.4 -3.4 0 0 Z" stroke="rgba(52,84,126,.55)" stroke-width="1.4" stroke-linejoin="round"/>
+    <g id="bloomDam">
+      <g fill="url(#pt3)">
+        <use href="#ptD" transform="rotate(1.0) scale(1.363)"/>
+        <use href="#ptD" transform="rotate(48.1) scale(1.422)"/>
+        <use href="#ptD" transform="rotate(88.1) scale(1.482)"/>
+        <use href="#ptD" transform="rotate(135.2) scale(1.339)"/>
+        <use href="#ptD" transform="rotate(182.3) scale(1.398)"/>
+        <use href="#ptD" transform="rotate(222.3) scale(1.458)"/>
+        <use href="#ptD" transform="rotate(269.4) scale(1.517)"/>
+        <use href="#ptD" transform="rotate(316.4) scale(1.375)"/>
+      </g>
+      <g fill="url(#pt4)">
+        <use href="#ptD" transform="rotate(27.1) scale(1.060)"/>
+        <use href="#ptD" transform="rotate(73.6) scale(1.106)"/>
+        <use href="#ptD" transform="rotate(127.1) scale(1.152)"/>
+        <use href="#ptD" transform="rotate(180.6) scale(1.042)"/>
+        <use href="#ptD" transform="rotate(227.0) scale(1.088)"/>
+        <use href="#ptD" transform="rotate(280.5) scale(1.134)"/>
+        <use href="#ptD" transform="rotate(334.0) scale(1.180)"/>
+      </g>
+      <g fill="url(#pt5)">
+        <use href="#ptD" transform="rotate(46.1) scale(0.795)"/>
+        <use href="#ptD" transform="rotate(108.2) scale(0.830)"/>
+        <use href="#ptD" transform="rotate(170.3) scale(0.864)"/>
+        <use href="#ptD" transform="rotate(225.3) scale(0.781)"/>
+        <use href="#ptD" transform="rotate(287.4) scale(0.816)"/>
+        <use href="#ptD" transform="rotate(349.4) scale(0.850)"/>
+      </g>
+      <g fill="url(#pt5)">
+        <use href="#ptInD" transform="rotate(14.2) scale(0.587)"/>
+        <use href="#ptInD" transform="rotate(88.3) scale(0.612)"/>
+        <use href="#ptInD" transform="rotate(155.3) scale(0.638)"/>
+        <use href="#ptInD" transform="rotate(229.4) scale(0.577)"/>
+        <use href="#ptInD" transform="rotate(303.4) scale(0.602)"/>
+      </g>
+      <g fill="url(#pt5)">
+        <use href="#ptInD" transform="rotate(42.3) scale(0.398)"/>
+        <use href="#ptInD" transform="rotate(127.3) scale(0.415)"/>
+        <use href="#ptInD" transform="rotate(219.4) scale(0.432)"/>
+        <use href="#ptInD" transform="rotate(311.4) scale(0.391)"/>
+      </g>
+      <circle r="4.6" fill="#E9D8AC"/>
+      <circle r="2" fill="#CDAF77"/>
+    </g>
+    <g id="fmnPetal">
+      <path d="M0 0 C-4.6 -1.6 -6.4 -6.2 -4.4 -9.6 C-2.8 -12.3 1.6 -12.6 3.6 -10.2 C6 -7.4 4.6 -2 0 0 Z"/>
+    </g>
+    <g id="fmn">
+      <g fill="url(#fmnG)" stroke="rgba(74,106,146,.42)" stroke-width=".5">
+        <use href="#fmnPetal" transform="rotate(2)"/>
+        <use href="#fmnPetal" transform="rotate(73) scale(.96)"/>
+        <use href="#fmnPetal" transform="rotate(145) scale(1.03)"/>
+        <use href="#fmnPetal" transform="rotate(216) scale(.94)"/>
+        <use href="#fmnPetal" transform="rotate(289) scale(1.01)"/>
+      </g>
+      <circle r="2.1" fill="#EFE0BA"/><circle r="1" fill="#C9AE76"/>
+      <circle cx="-.7" cy="-.7" r=".45" fill="#FFF8E6"/>
+    </g>
+    <g id="fmnPale">
+      <g fill="url(#fmnG2)" stroke="rgba(120,148,180,.3)" stroke-width=".42">
+        <use href="#fmnPetal" transform="rotate(14) scale(.78)"/>
+        <use href="#fmnPetal" transform="rotate(86) scale(.74)"/>
+        <use href="#fmnPetal" transform="rotate(158) scale(.8)"/>
+        <use href="#fmnPetal" transform="rotate(230) scale(.75)"/>
+        <use href="#fmnPetal" transform="rotate(302) scale(.77)"/>
+      </g>
+      <circle r="1.5" fill="#F0E4C4"/>
+    </g>
+    <g id="bud">
+      <path d="M0 0 C-3 -1.2 -4.2 -4.6 -2.8 -7.2 C-1.4 -9.6 2.4 -9.6 3.4 -7 C4.6 -4.2 3 -.9 0 0 Z"
+        fill="#9FBBD7" stroke="rgba(74,106,146,.38)" stroke-width=".45"/>
+      <path d="M-.4 -1 C-.8 -3.4 -.4 -5.6 .6 -7.4" fill="none" stroke="rgba(74,106,146,.3)" stroke-width=".4"/>
+    </g>
+    <g id="bbreath" fill="none" stroke="#8FAAC6" stroke-width=".65" stroke-linecap="round">
+      <path d="M0 0 C-.6 -3 -.4 -5.4 0 -7.4 M0 -7.4 C-2 -9.6 -3.8 -11 -5.2 -12.2 M0 -7.4 C.2 -10.4 .3 -12.4 .2 -14.2 M0 -7.4 C2 -9.4 3.8 -10.8 5.1 -12"/>
+      <g fill="#F4F9FC" stroke="rgba(94,128,166,.42)" stroke-width=".45">
+        <circle cx="-5.4" cy="-12.8" r="1.7"/><circle cx=".2" cy="-15" r="1.9"/><circle cx="5.3" cy="-12.6" r="1.6"/>
+      </g>
+    </g>
+    <g id="leafSm">
+      <path d="M0 0 C6.4 -4.2 10.8 -13.4 9.4 -21.4 C2.8 -17.8 -1.8 -7.4 0 0 Z"
+        fill="url(#leafG)" stroke="rgba(96,124,96,.5)" stroke-width=".5"/>
+      <path d="M.4 -.8 C3.4 -6 6.6 -13 8.6 -19.4" fill="none" stroke="rgba(96,124,96,.45)" stroke-width=".45"/>
+    </g>
+    <g id="leafBig">
+      <path d="M0 0 C10 -6 17 -21 15 -34 C4.4 -28 -2.8 -11.8 0 0 Z"
+        fill="url(#leafG)" stroke="rgba(92,120,92,.5)" stroke-width=".55"/>
+      <path d="M.6 -1.2 C5.4 -9.6 10.4 -21 13.8 -31" fill="none" stroke="rgba(92,120,92,.45)" stroke-width=".5"/>
+      <g fill="none" stroke="rgba(92,120,92,.3)" stroke-width=".4">
+        <path d="M3.4 -7 6.6 -9.6M6 -13 9.4 -15.4M8.6 -19 11.6 -21.4"/>
+      </g>
+    </g>
+    <g id="bouquet">
+      <g filter="url(#softer)" opacity=".9">
+        <ellipse cx="46" cy="44" rx="56" ry="50" fill="url(#washG)"/>
+        <ellipse cx="122" cy="26" rx="42" ry="30" fill="url(#washG)"/>
+        <ellipse cx="30" cy="118" rx="30" ry="44" fill="url(#washG)"/>
+      </g>
+      <g fill="none" stroke="#86A3C2" stroke-width=".95" stroke-linecap="round" opacity=".62">
+        <path d="M44 38 C84 24 128 16 194 11"/>
+        <path d="M38 50 C30 92 24 124 17 186"/>
+        <path d="M52 48 C78 60 98 80 114 100"/>
+        <path d="M48 32 C76 40 100 44 130 40"/>
+        <path d="M34 60 C44 70 54 78 66 83"/>
+      </g>
+
+      <use href="#leafBig" transform="translate(28 84) rotate(-150) scale(1.1)"/>
+      <use href="#leafBig" transform="translate(74 34) rotate(104) scale(.95)"/>
+      <use href="#leafBig" transform="translate(58 70) rotate(-44) scale(-.85 .85)"/>
+      <use href="#leafSm" transform="translate(112 32) rotate(118) scale(1)"/>
+      <use href="#leafSm" transform="translate(26 126) rotate(-168) scale(.95)"/>
+      <use href="#leafSm" transform="translate(96 84) rotate(-54) scale(-.9 .9)"/>
+      <use href="#leafSm" transform="translate(168 18) rotate(112) scale(.78)"/>
+      <use href="#leafSm" transform="translate(22 160) rotate(-176) scale(.72)"/>
+      <use href="#leafSm" transform="translate(14 46) rotate(-124) scale(.8)"/>
+
+      <use href="#bbreath" transform="translate(84 28) rotate(96) scale(1.1)"/>
+      <use href="#bbreath" transform="translate(30 94) rotate(-166) scale(1.15)"/>
+      <use href="#bbreath" transform="translate(146 20) rotate(104) scale(.9)"/>
+      <use href="#bbreath" transform="translate(24 146) rotate(-178) scale(.9)"/>
+      <use href="#bbreath" transform="translate(86 66) rotate(-40) scale(1)"/>
+      <use href="#bbreath" transform="translate(10 62) rotate(-130) scale(.85)"/>
+
+      <use href="#bud" transform="translate(104 20) rotate(84) scale(1.15)"/>
+      <use href="#bud" transform="translate(24 110) rotate(-174) scale(1.2)"/>
+      <use href="#bud" transform="translate(190 10) rotate(96) scale(.9)"/>
+      <use href="#bud" transform="translate(20 180) rotate(184) scale(.85)"/>
+      <use href="#bud" transform="translate(118 108) rotate(-34)"/>
+
+      <use href="#fmnPale" transform="translate(66 22) scale(1.1)"/>
+      <use href="#fmnPale" transform="translate(20 72) scale(1.15)"/>
+      <use href="#fmnPale" transform="translate(134 34) scale(.95)"/>
+      <use href="#fmnPale" transform="translate(34 136) scale(.9)"/>
+      <use href="#fmnPale" transform="translate(96 60)"/>
+
+      <use href="#bloom" transform="translate(40 40) scale(.66)"/>
+      <use href="#bloom" transform="translate(86 46) scale(.46)"/>
+      <use href="#bloom" transform="translate(36 102) scale(.44)"/>
+
+      <use href="#fmn" transform="translate(6 18) scale(1.3)"/>
+      <use href="#fmn" transform="translate(72 48) scale(1.05)"/>
+      <use href="#fmn" transform="translate(110 38) scale(1.15)"/>
+      <use href="#fmn" transform="translate(152 22) scale(.95)"/>
+      <use href="#fmn" transform="translate(196 10) scale(.85)"/>
+      <use href="#fmn" transform="translate(18 92) scale(1)"/>
+      <use href="#fmn" transform="translate(30 154) scale(.95)"/>
+      <use href="#fmn" transform="translate(16 190) scale(.8)"/>
+      <use href="#fmn" transform="translate(68 84) scale(.9)"/>
+      <use href="#fmn" transform="translate(112 94) scale(.8)"/>
+    </g>
+    <g id="capIcon" fill="none" stroke="currentColor" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M16 3.6 L30.4 9.6 L16 15.6 L1.6 9.6 Z"/>
+      <path d="M16 6.6 L23.4 9.6 L16 12.6 L8.6 9.6 Z" opacity=".4"/>
+      <path d="M6.6 12 V19.6 C6.6 19.6 10.2 23.3 16 23.3 C21.8 23.3 25.4 19.6 25.4 19.6 V12"/>
+      <path d="M6.6 19.6 C6.6 19.6 10.2 21.6 16 21.6 C21.8 21.6 25.4 19.6 25.4 19.6" opacity=".38"/>
+      <path d="M30.4 9.6 V19.2 Q30.4 21.5 28.4 22"/>
+      <path d="M28.4 22 Q26.6 22.5 26.6 24.6 V26.6"/>
+      <circle cx="26.6" cy="28.2" r="1.5" fill="currentColor" stroke="none"/>
+      <path d="M25 27 L28.2 27" opacity=".55"/>
+      <path d="M25.4 29.4 L27.8 29.4" opacity=".35"/>
+    </g>
+    <g id="camFancy" fill="none" stroke="currentColor" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="1.8" y="8" width="28.4" height="19" rx="3.6"/>
+      <path d="M10.4 8 L12.3 4.4 H19.7 L21.6 8"/>
+      <circle cx="16" cy="17.6" r="6.6"/>
+      <circle cx="16" cy="17.6" r="4" opacity=".5"/>
+      <circle cx="16" cy="17.6" r="1.7" fill="currentColor" stroke="none" opacity=".85"/>
+      <path d="M13.3 14.9 A3.8 3.8 0 0 1 16 13.8" opacity=".55"/>
+      <circle cx="25.6" cy="12.3" r="1.2" fill="currentColor" stroke="none"/>
+      <path d="M5.2 12.3 H8.4" opacity=".45"/>
+      <path d="M5.2 22.6 H7.6" opacity=".3"/>
+    </g>
+    <g id="camIcon" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2.5" y="7.5" width="27" height="20" rx="3.5"/>
+      <path d="M11 7.5 13.2 4h5.6L21 7.5"/>
+      <circle cx="16" cy="17.5" r="6.2"/>
+      <circle cx="16" cy="17.5" r="2.2"/>
+    </g>
+  </defs>
+</svg>
+
+<script>
+/* Bật màn mở thiệp ngay trước khi vẽ: không có JS thì thiệp hiện bình thường. */
+(function () {
+  document.documentElement.classList.add("gated");
+  document.addEventListener("DOMContentLoaded", function () {
+    var g = document.getElementById("gate");
+    if (g) { g.hidden = false; }
+  });
+})();
+</script>
+
+<div class="gate" id="gate" hidden>
+  <button class="constel" id="constel" type="button" aria-label="Nhấp vào đây để mở thiệp">
+    <svg class="blossom" viewBox="-76 -76 152 152" aria-hidden="true" focusable="false">
+      <g class="bring"><circle r="68" fill="none" stroke="currentColor" stroke-width=".8" opacity=".26" stroke-dasharray="2 9"/></g>
+      <g transform="scale(1.3)">
+        <g class="bl-wash" filter="url(#softer)"><circle r="54" fill="url(#washG)"/></g>
+        <g class="bl-r1" fill="url(#pt1)" opacity=".92">
+          <use href="#pt" transform="rotate(1.0) scale(1.363)"/>
+          <use href="#pt" transform="rotate(48.1) scale(1.422)"/>
+          <use href="#pt" transform="rotate(88.1) scale(1.482)"/>
+          <use href="#pt" transform="rotate(135.2) scale(1.339)"/>
+          <use href="#pt" transform="rotate(182.3) scale(1.398)"/>
+          <use href="#pt" transform="rotate(222.3) scale(1.458)"/>
+          <use href="#pt" transform="rotate(269.4) scale(1.517)"/>
+          <use href="#pt" transform="rotate(316.4) scale(1.375)"/>
+        </g>
+        <g class="bl-r2" fill="url(#pt2)" opacity=".95">
+          <use href="#pt" transform="rotate(27.1) scale(1.060)"/>
+          <use href="#pt" transform="rotate(73.6) scale(1.106)"/>
+          <use href="#pt" transform="rotate(127.1) scale(1.152)"/>
+          <use href="#pt" transform="rotate(180.6) scale(1.042)"/>
+          <use href="#pt" transform="rotate(227.0) scale(1.088)"/>
+          <use href="#pt" transform="rotate(280.5) scale(1.134)"/>
+          <use href="#pt" transform="rotate(334.0) scale(1.180)"/>
+        </g>
+        <g class="bl-r3" fill="url(#pt3)" opacity=".97">
+          <use href="#pt" transform="rotate(46.1) scale(0.795)"/>
+          <use href="#pt" transform="rotate(108.2) scale(0.830)"/>
+          <use href="#pt" transform="rotate(170.3) scale(0.864)"/>
+          <use href="#pt" transform="rotate(225.3) scale(0.781)"/>
+          <use href="#pt" transform="rotate(287.4) scale(0.816)"/>
+          <use href="#pt" transform="rotate(349.4) scale(0.850)"/>
+        </g>
+        <g class="bl-r4" fill="url(#pt4)" opacity="1">
+          <use href="#ptIn" transform="rotate(14.2) scale(0.587)"/>
+          <use href="#ptIn" transform="rotate(88.3) scale(0.612)"/>
+          <use href="#ptIn" transform="rotate(155.3) scale(0.638)"/>
+          <use href="#ptIn" transform="rotate(229.4) scale(0.577)"/>
+          <use href="#ptIn" transform="rotate(303.4) scale(0.602)"/>
+        </g>
+        <g class="bl-r5" fill="url(#pt5)" opacity="1">
+          <use href="#ptIn" transform="rotate(42.3) scale(0.398)"/>
+          <use href="#ptIn" transform="rotate(127.3) scale(0.415)"/>
+          <use href="#ptIn" transform="rotate(219.4) scale(0.432)"/>
+          <use href="#ptIn" transform="rotate(311.4) scale(0.391)"/>
+        </g>
+        <g class="bl-seed">
+          <circle r="4.6" fill="#E9D8AC"/>
+          <circle r="2" fill="#CDAF77"/>
+          <g stroke="#C9AE76" stroke-width=".65" stroke-linecap="round" fill="none" opacity=".9">
+            <path d="M0 0 2.6-5M0 0-3.1-4.3M0 0 4.7-2M0 0-4.9 1.3M0 0 1.5 5.2M0 0-1.9 4.7"/>
+          </g>
+          <g fill="#F2E2AE">
+            <circle cx="2.7" cy="-5.4" r="1.05"/><circle cx="-3.3" cy="-4.6" r=".95"/>
+            <circle cx="5" cy="-2.1" r=".95"/><circle cx="-5.2" cy="1.4" r="1.05"/>
+            <circle cx="1.6" cy="5.6" r=".95"/><circle cx="-2" cy="5" r=".95"/>
+          </g>
+        </g>
+      </g>
+    </svg>
+    <span class="constel-hint">Hãy mở thiệp ra điii</span>
+  </button>
+</div>
+
+<div class="page">
+
+  <header class="hero">
+    <div class="wrap">
+      <div class="hero-inner">
+        <p class="eyebrow iv" style="--iv:.3s">Thân mời bạn đến dự</p>
+
+        <div class="hero-photo iv" style="--iv:.6s">
+          <div class="hp-inner">
+            <div class="ph">
+              <svg class="ph-icon" viewBox="0 0 32 32" aria-hidden="true"><use href="#camIcon"/></svg>
+              <span class="ph-hint">Ảnh chính · dọc 3:4<code>anh/chan-dung.jpg</code></span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <section class="band" aria-label="Khoảnh khắc">
+    <div class="wrap">
+      <div class="reel rv" style="--fy:40px">
+        <figure class="rbig">
+          <div class="ph">
+            <svg class="ph-icon" viewBox="0 0 32 32" aria-hidden="true"><use href="#camIcon"/></svg>
+            <span class="ph-hint">Ảnh lớn · dọc 3:4<code>anh/01.jpg</code></span>
+          </div>
+        </figure>
+        <div class="film" aria-hidden="true">
+          <div class="film-track">
+          <div class="fcell">
+            <div class="ph">
+              <svg class="ph-icon" viewBox="0 0 32 32" aria-hidden="true"><use href="#camIcon"/></svg>
+              <span class="ph-hint">Dọc<code>anh/02.jpg</code></span>
+            </div>
+          </div>
+          <div class="fcell">
+            <div class="ph">
+              <svg class="ph-icon" viewBox="0 0 32 32" aria-hidden="true"><use href="#camIcon"/></svg>
+              <span class="ph-hint">Dọc<code>anh/03.jpg</code></span>
+            </div>
+          </div>
+          <div class="fcell">
+            <div class="ph">
+              <svg class="ph-icon" viewBox="0 0 32 32" aria-hidden="true"><use href="#camIcon"/></svg>
+              <span class="ph-hint">Dọc<code>anh/05.jpg</code></span>
+            </div>
+          </div>
+          <div class="fcell">
+            <div class="ph">
+              <svg class="ph-icon" viewBox="0 0 32 32" aria-hidden="true"><use href="#camIcon"/></svg>
+              <span class="ph-hint">Dọc<code>anh/06.jpg</code></span>
+            </div>
+          </div>
+          <div class="fcell">
+            <div class="ph">
+              <svg class="ph-icon" viewBox="0 0 32 32" aria-hidden="true"><use href="#camIcon"/></svg>
+              <span class="ph-hint">Dọc<code>anh/07.jpg</code></span>
+            </div>
+          </div>
+          <div class="fcell">
+            <div class="ph">
+              <svg class="ph-icon" viewBox="0 0 32 32" aria-hidden="true"><use href="#camIcon"/></svg>
+              <span class="ph-hint">Dọc<code>anh/08.jpg</code></span>
+            </div>
+          </div>
+          <div class="fcell">
+            <div class="ph">
+              <svg class="ph-icon" viewBox="0 0 32 32" aria-hidden="true"><use href="#camIcon"/></svg>
+              <span class="ph-hint">Dọc<code>anh/09.jpg</code></span>
+            </div>
+          </div>
+          <div class="fcell">
+            <div class="ph">
+              <svg class="ph-icon" viewBox="0 0 32 32" aria-hidden="true"><use href="#camIcon"/></svg>
+              <span class="ph-hint">Dọc<code>anh/14.jpg</code></span>
+            </div>
+          </div>
+          <div class="fcell">
+            <div class="ph">
+              <svg class="ph-icon" viewBox="0 0 32 32" aria-hidden="true"><use href="#camIcon"/></svg>
+              <span class="ph-hint">Dọc<code>anh/15.jpg</code></span>
+            </div>
+          </div>
+          <div class="fcell">
+            <div class="ph">
+              <svg class="ph-icon" viewBox="0 0 32 32" aria-hidden="true"><use href="#camIcon"/></svg>
+              <span class="ph-hint">Dọc<code>anh/02.jpg</code></span>
+            </div>
+          </div>
+          <div class="fcell">
+            <div class="ph">
+              <svg class="ph-icon" viewBox="0 0 32 32" aria-hidden="true"><use href="#camIcon"/></svg>
+              <span class="ph-hint">Dọc<code>anh/03.jpg</code></span>
+            </div>
+          </div>
+          <div class="fcell">
+            <div class="ph">
+              <svg class="ph-icon" viewBox="0 0 32 32" aria-hidden="true"><use href="#camIcon"/></svg>
+              <span class="ph-hint">Dọc<code>anh/05.jpg</code></span>
+            </div>
+          </div>
+          <div class="fcell">
+            <div class="ph">
+              <svg class="ph-icon" viewBox="0 0 32 32" aria-hidden="true"><use href="#camIcon"/></svg>
+              <span class="ph-hint">Dọc<code>anh/06.jpg</code></span>
+            </div>
+          </div>
+          <div class="fcell">
+            <div class="ph">
+              <svg class="ph-icon" viewBox="0 0 32 32" aria-hidden="true"><use href="#camIcon"/></svg>
+              <span class="ph-hint">Dọc<code>anh/07.jpg</code></span>
+            </div>
+          </div>
+          <div class="fcell">
+            <div class="ph">
+              <svg class="ph-icon" viewBox="0 0 32 32" aria-hidden="true"><use href="#camIcon"/></svg>
+              <span class="ph-hint">Dọc<code>anh/08.jpg</code></span>
+            </div>
+          </div>
+          <div class="fcell">
+            <div class="ph">
+              <svg class="ph-icon" viewBox="0 0 32 32" aria-hidden="true"><use href="#camIcon"/></svg>
+              <span class="ph-hint">Dọc<code>anh/09.jpg</code></span>
+            </div>
+          </div>
+          <div class="fcell">
+            <div class="ph">
+              <svg class="ph-icon" viewBox="0 0 32 32" aria-hidden="true"><use href="#camIcon"/></svg>
+              <span class="ph-hint">Dọc<code>anh/14.jpg</code></span>
+            </div>
+          </div>
+          <div class="fcell">
+            <div class="ph">
+              <svg class="ph-icon" viewBox="0 0 32 32" aria-hidden="true"><use href="#camIcon"/></svg>
+              <span class="ph-hint">Dọc<code>anh/15.jpg</code></span>
+            </div>
+          </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="h-invite">
+    <div class="wrap">
+      <div class="invite rv" style="--fy:38px">
+        <p class="eyebrow">Thân mời</p>
+        <p class="inv-line" id="h-invite">Đến tham dự lễ tốt nghiệp của tân cử nhân</p>
+        <h2 class="inv-name">{{HO_TEN}}</h2>
+        <span class="inv-rule" aria-hidden="true"></span>
+        <p class="at-time">Vào 13:30, Thứ Bảy</p>
+        <div class="datebox">
+          <span>Tháng 11</span>
+          <b>07</b>
+          <span>Năm 2026</span>
+        </div>
+        <p class="at-place">Tổ chức tại</p>
+        <p class="venue">{{TRUONG}}</p>
+        <p class="addr">{{DIA_CHI}}<br>{{TINH_TP}}</p>
+        <a class="btn" href="#" id="nut-ban-do" target="_blank" rel="noopener noreferrer">Xem đường đi</a>
+      </div>
+
+      <div class="venue-strip rv" style="--fx:16vw;--fy:0px;--fr:2deg">
+        <div class="vmap" id="vmap">
+          <div class="ph">
+            <svg class="ph-icon" viewBox="0 0 32 32" aria-hidden="true"><use href="#camIcon"/></svg>
+            <span class="ph-hint">Ảnh trường · ngang 16:9<code>anh/truong.webp</code></span>
+          </div>
+          <iframe class="vmap-frame" id="vmap-frame"
+            src="about:blank"
+            title="Bản đồ tới Đại học Kinh tế TP. Hồ Chí Minh"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="h-guide">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <p class="eyebrow">Tới nơi thì</p>
+        <h2 id="h-guide">Chỉ đường &amp; <em class="fancy">gửi xe</em></h2>
+        <span class="rule" aria-hidden="true"><svg class="dot-fl" viewBox="-11 -11 22 22"><use href="#fmn"/></svg></span>
+      </div>
+      <div class="guide stagger">
+        <div class="gcard" style="--i:0;--fx:-10vw;--fy:0px">
+          <span class="gnum">01</span>
+          <h3>Gửi xe</h3>
+          <div class="gbody">
+            <div class="gslot">
+              <p class="glabel">Gửi ở đây trước nha <em>(ô tô &amp; xe máy)</em></p>
+              <p class="gaddr">{{BAI_XE_1}}</p>
+            </div>
+            <div class="gslot">
+              <p class="glabel">Kín chỗ thì tạt qua đây <em>(chỉ xe máy)</em></p>
+              <p class="gaddr">{{BAI_XE_2}}</p>
+            </div>
+            <p class="gnote">Tiện lợi hơn bạn có thể di chuyển bằng các phương tiện công cộng hoặc xe công nghệ để tránh việc cả hai bãi đều hết chỗ đậu nhé ạ.</p>
+          </div>
+        </div>
+        <div class="gcard" style="--i:1;--fx:10vw;--fy:0px">
+          <span class="gnum">02</span>
+          <h3>Tìm mình ở đâu</h3>
+          <div class="gbody">
+            <div class="gslot">
+              <p class="glabel">Cổng vào</p>
+              <p class="gaddr">{{CONG_VAO}}</p>
+            </div>
+            <p class="gnote">Mình sẽ đứng xung quanh khu vực giữa đàn piano và phía sau cầu thang nhé!!</p>
+          </div>
+        </div>
+        <div class="gcard" style="--i:2;--fx:-10vw;--fy:0px">
+          <span class="gnum">03</span>
+          <h3>Vẫn chưa tìm thấy {{TEN}} sao?</h3>
+          <div class="gbody">
+            <p>Vậy thì hãy nhấc máy lên và gọi 1 trong hai dãy số sau để được gặp {{TEN}} nhanh chóng nhé</p>
+            <div class="gcalls">
+              <p class="glabel">{{NGUOI_1}} <em>(trợ lí đáng iu của {{TEN}})</em></p>
+              <p class="gphone"><b id="phone-1">{{SDT_1}}</b></p>
+              <button class="btn btn--nho" type="button" id="copy-phone">Copy</button>
+              <p class="glabel">yukiii</p>
+              <p class="gphone"><b id="phone-2">{{SDT_2}}</b></p>
+              <button class="btn btn--nho" type="button" id="copy-phone-2">Copy</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band band--tight" aria-labelledby="h-sched">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <h2 id="h-sched">Lịch trình <em class="fancy">ngày hôm ấy</em></h2>
+        <span class="rule" aria-hidden="true"><svg class="dot-fl" viewBox="-11 -11 22 22"><use href="#fmn"/></svg></span>
+      </div>
+      <div class="sched stagger">
+        <div class="srow srow--a" style="--i:0;--fx:-12vw;--fy:0px">
+          <span class="sicon"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#camFancy"/></svg></span>
+          <div class="sinfo">
+            <p class="stime">13<span>:</span>30</p>
+            <p class="sname">Chụp hình kỷ niệm</p>
+            <p class="stag">Cùng lưu giữ những bức hình tuyệt vời nào</p>
+          </div>  
+        </div>
+        <div class="srow srow--b" style="--i:1;--fx:12vw;--fy:0px">
+          <div class="sinfo">
+            <p class="stime">15<span>:</span>00</p>
+            <p class="sname">{{TEN}} làm lễ tốt nghiệp</p>
+          </div>
+          <span class="sicon"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#capIcon"/></svg></span>
+        </div>  
+      </div>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="h-cal">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <p class="eyebrow">Ngày ấy</p>
+        <h2 id="h-cal">Đánh dấu <em class="fancy">giúp mình nhé</em></h2>
+        <span class="rule" aria-hidden="true"><svg class="dot-fl" viewBox="-11 -11 22 22"><use href="#fmn"/></svg></span>
+      </div>
+      <div class="cal-row">
+        <div class="cal rv" style="--fx:-14vw;--fy:0px">
+          <p class="cal-head">Tháng Mười Một</p>
+          <table>
+            <thead>
+              <tr><th>T2</th><th>T3</th><th>T4</th><th>T5</th><th>T6</th><th>T7</th><th>CN</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="off">0</td><td class="off">0</td><td class="off">0</td><td class="off">0</td><td class="off">0</td><td class="off">0</td><td>1</td></tr>
+              <tr><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td class="day-x"><svg class="day-bong" viewBox="-54 -54 108 108" aria-hidden="true"><use href="#bloomDam"/></svg>7</td><td>8</td></tr>
+              <tr><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td></tr>
+              <tr><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td></tr>
+              <tr><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td></tr>
+              <tr><td>30</td><td class="off">0</td><td class="off">0</td><td class="off">0</td><td class="off">0</td><td class="off">0</td><td class="off">0</td></tr>
+            </tbody>
+          </table>
+          <p class="cal-note">Thứ Bảy &middot; 13:30</p>
+        </div>
+      <div class="cal-photos rv" style="--fx:16vw;--fy:0px;--fr:9deg">
+        <figure class="paper cal-photo" style="--tilt:-2.6deg">
+          <div class="ph">
+            <svg class="ph-icon" viewBox="0 0 32 32" aria-hidden="true"><use href="#camIcon"/></svg>
+            <span class="ph-hint">Dọc 3:4<code>anh/04.jpg</code></span>
+          </div>
+          <figcaption class="cap">&#10022;</figcaption>
+        </figure>
+        <figure class="paper cal-photo" style="--tilt:3.4deg">
+          <div class="ph">
+            <svg class="ph-icon" viewBox="0 0 32 32" aria-hidden="true"><use href="#camIcon"/></svg>
+            <span class="ph-hint">Dọc 3:4<code>anh/13.jpg</code></span>
+          </div>
+          <figcaption class="cap">&#10022;</figcaption>
+        </figure>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="h-cd">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <h2 id="h-cd">Đếm ngược đến <em class="fancy">ngày ấy</em></h2>
+        <span class="rule" aria-hidden="true"><svg class="dot-fl" viewBox="-11 -11 22 22"><use href="#fmn"/></svg></span>
+      </div>
+      <div class="cd stagger" id="cd">
+        <div style="--i:0"><b id="cd-d">--</b><small>Ngày</small></div>
+        <div style="--i:1"><b id="cd-h">--</b><small>Giờ</small></div>
+        <div style="--i:2"><b id="cd-m">--</b><small>Phút</small></div>
+        <div style="--i:3"><b id="cd-s">--</b><small>Giây</small></div>
+      </div>
+      <p class="cd-note" id="cd-note">Mình mong được gặp bạn ở đó.</p>
+    </div>
+  </section>
+
+  <div class="wrap divider" aria-hidden="true">
+    <span class="dline"></span>
+    <svg viewBox="-11 -11 22 22" style="width:30px;height:30px"><use href="#fmn"/></svg>
+    <span class="dline"></span>
+  </div>
+
+  <section class="band" aria-label="Album">
+    <div class="wrap">
+      <div class="gallery">
+        <div class="mos mos--a stagger">
+          <div class="ph sq" style="--i:0;--fx:-14vw;--fy:0px;--fr:-7deg">
+            <svg class="ph-icon" viewBox="0 0 32 32" aria-hidden="true"><use href="#camIcon"/></svg>
+            <span class="ph-hint">Vuông 1:1<code>anh/10.jpg</code></span>
+          </div>
+          <div class="ph sq" style="--i:1;--fx:-14vw;--fy:24px;--fr:-5deg">
+            <svg class="ph-icon" viewBox="0 0 32 32" aria-hidden="true"><use href="#camIcon"/></svg>
+            <span class="ph-hint">Vuông 1:1<code>anh/11.jpg</code></span>
+          </div>
+          <div class="ph tall" style="--i:2;--fx:14vw;--fy:0px;--fr:7deg">
+            <svg class="ph-icon" viewBox="0 0 32 32" aria-hidden="true"><use href="#camIcon"/></svg>
+            <span class="ph-hint">Dọc<code>anh/12.jpg</code></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="rsvp" aria-labelledby="h-rsvp">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <p class="eyebrow">Xác nhận</p>
+        <h2 id="h-rsvp">Bạn sẽ <em class="fancy">đến chứ?</em></h2>
+        <span class="rule" aria-hidden="true"><svg class="dot-fl" viewBox="-11 -11 22 22"><use href="#fmn"/></svg></span>
+      </div>
+
+      <form class="form rv" id="rsvp-form" novalidate>
+        <div class="field">
+          <label for="g-name">Tên của bạn</label>
+          <input id="g-name" name="name" type="text" autocomplete="name" placeholder="Ghi tên để {{TEN}} nhận ra nha" required>
+        </div>
+        <div class="field">
+          <p class="lbl" id="g-going-label">Bạn đến được không?</p>
+          <div class="choice" role="radiogroup" aria-labelledby="g-going-label">
+            <label><input type="radio" name="going" value="co" checked> Mình sẽ đến</label>
+            <label><input type="radio" name="going" value="khong"> Tiếc quá, mình không đến được</label>
+          </div>
+        </div>
+        <div class="field">
+          <label for="g-wish">Nhắn {{TEN}} vài dòng nhé</label>
+          <textarea id="g-wish" name="wish" placeholder="Chúc gì cũng được, {{TEN}} đọc hết á..."></textarea>
+        </div>
+        <p id="form-err" class="contact" hidden></p>
+        <button class="btn btn--fill" type="submit" id="g-submit" style="justify-self:stretch">Gửi xác nhận</button>
+      </form>
+
+      <div class="thanks rv" id="thanks" hidden>
+        <h3 id="thanks-title">Iu bẹn lém!</h3>
+        <p id="thanks-lead">{{TEN}} ghi vào sổ rồi nha!</p>
+        <div class="msgbox" id="thanks-msg"></div>
+        <div class="row">
+          <button class="btn btn--fill" type="button" id="copy-msg">Sao chép tin nhắn</button>
+          <button class="btn" type="button" id="edit-again">Sửa lại</button>
+        </div>
+        <p class="contact" id="contact-line">Gửi qua Zalo: <b id="contact-phone">{{SDT_2}}</b></p>
+      </div>
+    </div>
+  </section>
+
+
+  <audio id="bgm" src="nhac.m4a" loop preload="auto"></audio>
+
+  <footer>
+    <div class="wrap stagger">
+      <div class="ph ph--wide" style="--i:0">
+        <svg class="ph-icon" viewBox="0 0 32 32" aria-hidden="true"><use href="#camIcon"/></svg>
+        <span class="ph-hint"><code>anh/cuoi.jpg</code></span>
+      </div>
+      <p class="script" style="--i:1">Hẹn gặp bạn</p>
+      <p class="fline" style="--i:2">Một bức ảnh của chúng ta</p>
+      <p class="fline" style="--i:3">tại buổi lễ tốt nghiệp</p>
+      <p class="fline" style="--i:4">sẽ là món quà lớn nhất của {{TEN}}</p>
+      <p class="fline fline--date" style="--i:5">Hẹn gặp bạn chiều thứ Bảy, 07.11.2026.</p>
+      <button class="btn" type="button" id="share-btn" style="--i:6;justify-self:center">Chia sẻ thiệp này</button>
+    </div>
+  </footer>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function () {
+  "use strict";
+
+  /* ================= phần phải điền =================
+     Sửa mấy dòng dưới đây là xong phần chữ. Chỗ khác tự ăn theo. */
+  var CAU_HINH = {
+    TEN:       "Mây",                          // tên gọi ngắn, hiện khắp thiệp
+    HO_TEN:    "Nguyễn Thị Khánh Mây",         // họ tên đầy đủ, in giữa thiệp
+    NGAY_GIO:  "2026-12-19T13:30:00+07:00",    // ngày giờ hành lễ, giờ Việt Nam
+    TRUONG:    "Trường Đại học ABC",
+    DIA_CHI:   "123 Đường Số 1, Phường Hai",   // bản đồ dựng theo dòng này
+    TINH_TP:   "Thành phố Hồ Chí Minh",
+    CONG_VAO:  "Cổng chính 123 Đường Số 1",
+    BAI_XE_1:  "45 Đường Số 2, Phường Hai",    // bãi gửi xe chính
+    BAI_XE_2:  "67 Đường Số 3, Phường Hai",    // bãi dự phòng
+    NGUOI_1:   "Khánh Linh",                   // người hỗ trợ, có số máy riêng
+    SDT_1:     "0900 000 001",                 // số của người hỗ trợ
+    SDT_2:     "0900 000 002",                 // số của chủ thiệp, Zalo gửi về đây
+    MAY_CHU:   "https://ten-may-chu.onrender.com"   // Render, bỏ dấu / cuối
+  };
+  /* ================= hết phần phải điền ================= */
+
+  var EVENT_ISO = CAU_HINH.NGAY_GIO;
+  var CONTACT_PHONE = CAU_HINH.SDT_1;
+  var CONTACT_PHONE_2 = CAU_HINH.SDT_2;
+  var CONTACT_ZALO = CONTACT_PHONE_2;
+  var API_BASE = (location.hostname === "localhost" || location.hostname === "127.0.0.1")
+    ? ""
+    : CAU_HINH.MAY_CHU;
+
+  var GUEST_OF_HONOR = CAU_HINH.TEN;
+
+  var $ = function (id) { return document.getElementById(id); };
+
+  /* thay {{...}} trong trang bằng giá trị ở trên, rồi dựng link bản đồ */
+  (function dienCauHinh() {
+    var oKhoa = /\{\{([A-Z_0-9]+)\}\}/g;
+    function thay(txt) {
+      return txt.replace(oKhoa, function (nguyen, khoa) {
+        return Object.prototype.hasOwnProperty.call(CAU_HINH, khoa) ? CAU_HINH[khoa] : nguyen;
+      });
+    }
+    document.title = thay(document.title);
+    var di = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null), nut, dsach = [];
+    while ((nut = di.nextNode())) { if (nut.nodeValue.indexOf("{{") >= 0) { dsach.push(nut); } }
+    dsach.forEach(function (t) { t.nodeValue = thay(t.nodeValue); });
+    Array.prototype.forEach.call(document.querySelectorAll("[placeholder],[alt],[aria-label],[content]"),
+      function (el) {
+        ["placeholder", "alt", "aria-label", "content"].forEach(function (a) {
+          var v = el.getAttribute(a);
+          if (v && v.indexOf("{{") >= 0) { el.setAttribute(a, thay(v)); }
+        });
+      });
+
+    var diaChi = CAU_HINH.DIA_CHI + ", " + CAU_HINH.TINH_TP;
+    var nut1 = $("nut-ban-do");
+    if (nut1) { nut1.href = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(diaChi); }
+    var khung = $("vmap-frame");
+    if (khung) {
+      var b64 = btoa(unescape(encodeURIComponent(diaChi))).replace(/=+$/, "");
+      khung.src = "https://www.google.com/maps/embed?origin=mfe&pb=!1m3!2m1!1z" + b64 + "!6i16";
+    }
+  })();
+  var pad = function (n) { return n < 10 ? "0" + n : String(n); };
+  var hasGsap = typeof window.gsap !== "undefined" && typeof window.ScrollTrigger !== "undefined";
+
+  var target = new Date(EVENT_ISO).getTime();
+  var note = $("cd-note");
+
+  function setDigit(el, value) {
+    if (el.textContent === value) { return; }
+    el.textContent = value;
+    el.classList.remove("pop");
+    void el.offsetWidth;
+    el.classList.add("pop");
+  }
+
+  function tick() {
+    if (isNaN(target)) {
+      note.textContent = "Chưa đặt được ngày lễ - kiểm tra lại EVENT_ISO trong file.";
+      return;
+    }
+    var diff = target - Date.now();
+    var past = diff < 0;
+    var d = Math.abs(diff);
+    setDigit($("cd-d"), pad(Math.floor(d / 86400000)));
+    setDigit($("cd-h"), pad(Math.floor(d / 3600000) % 24));
+    setDigit($("cd-m"), pad(Math.floor(d / 60000) % 60));
+    setDigit($("cd-s"), pad(Math.floor(d / 1000) % 60));
+    note.textContent = past
+      ? "Ngày ấy đã qua rồi - cảm ơn bạn đã ở đó cùng mình."
+      : "Mình mong được gặp bạn ở đó.";
+  }
+  tick();
+  setInterval(tick, 1000);
+
+  $("contact-phone").textContent = CONTACT_ZALO;
+  if ($("phone-1")) { $("phone-1").textContent = CONTACT_PHONE; }
+  if ($("phone-2")) { $("phone-2").textContent = CONTACT_PHONE_2; }
+
+  if (!hasGsap && "IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+      });
+    }, { rootMargin: "0px 0px -10% 0px", threshold: 0.06 });
+    Array.prototype.forEach.call(document.querySelectorAll(".rv, .stagger"), function (el) {
+      io.observe(el);
+    });
+  }
+
+  var form = $("rsvp-form");
+  var thanks = $("thanks");
+  var err = $("form-err");
+  var LS_KEY = "thiep-tot-nghiep-rsvp";
+  var DEV_KEY = "thiep-tot-nghiep-thiet-bi";
+
+  function deviceId() {
+    try {
+      var id = localStorage.getItem(DEV_KEY);
+      if (!id) {
+        id = (window.crypto && crypto.randomUUID)
+          ? crypto.randomUUID()
+          : "tb-" + Date.now().toString(36) + "-" + Math.random().toString(36).slice(2, 12);
+        localStorage.setItem(DEV_KEY, id);
+      }
+      return id;
+    } catch (e) {
+      return "tb-" + Date.now().toString(36) + "-" + Math.random().toString(36).slice(2, 12);
+    }
+  }
+
+  function submitToApi(d) {
+    var payload = { deviceId: deviceId(), name: d.name, going: d.going, count: 0, wish: d.wish };
+    return fetch(API_BASE + "/api/rsvp", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    }).then(function (res) {
+      return res.json().then(function (j) {
+        if (res.status === 429) { return { saved: false, tooFast: true, error: j.error }; }
+        if (!res.ok || !j.ok) { return { saved: false, error: j.error }; }
+        return { saved: true, stats: j.stats };
+      });
+    }).catch(function () {
+      return { saved: false };
+    });
+  }
+
+  (function wake(attempt) {
+    fetch(API_BASE + "/api/health").then(function (r) {
+      if (!r.ok && attempt < 3) { setTimeout(function () { wake(attempt + 1); }, 8000 * (attempt + 1)); }
+    }).catch(function () {
+      if (attempt < 3) { setTimeout(function () { wake(attempt + 1); }, 8000 * (attempt + 1)); }
+    });
+  })(0);
+
+  function readForm() {
+    var going = form.querySelector('input[name="going"]:checked');
+    return {
+      name: form.elements.name.value.trim(),
+      going: going ? going.value : "co",
+      wish: form.elements.wish.value.trim()
+    };
+  }
+
+  function buildMessage(d) {
+    var lines = ["Xác nhận dự lễ tốt nghiệp của " + GUEST_OF_HONOR, ""];
+    lines.push("Tên: " + d.name);
+    if (d.going === "co") {
+      lines.push("Tham dự: Có");
+    } else {
+      lines.push("Tham dự: Rất tiếc mình không đến được");
+    }
+    if (d.wish) { lines.push("", "Lời chúc: " + d.wish); }
+    return lines.join("\n");
+  }
+
+  function showThanks(d, r) {
+    var saved = !!(r && r.saved);
+    $("thanks-title").textContent = d.going === "co"
+      ? "Hẹn gặp bạn chiều 07.11!"
+      : "Cảm ơn bạn đã nhắn cho mình";
+    $("thanks-lead").textContent = saved
+      ? (d.going === "co"
+          ? "Đã ghi tên bạn vào danh sách khách của " + GUEST_OF_HONOR + " rồi ✦"
+          : "Mình đã ghi nhận rồi ✦ Cảm ơn bạn đã báo cho mình biết.")
+      : "Chưa nối được tới máy chủ, nên bạn gửi giúp mình tin nhắn này qua Zalo nhé:";
+    $("thanks-msg").textContent = buildMessage(d);
+    $("thanks-msg").hidden = saved;
+    $("copy-msg").hidden = saved;
+    $("contact-line").hidden = saved;
+    form.hidden = true;
+    thanks.hidden = false;
+    thanks.classList.add("in");
+  }
+
+  try {
+    var saved = JSON.parse(localStorage.getItem(LS_KEY) || "null");
+    var sd = saved && saved.d ? saved.d : saved;
+    if (sd && sd.name) {
+      form.elements.name.value = sd.name;
+      form.elements.wish.value = sd.wish || "";
+      var r = form.querySelector('input[name="going"][value="' + sd.going + '"]');
+      if (r) { r.checked = true; }
+      showThanks(sd, { saved: !!(saved && saved.sent) });
+    }
+  } catch (e) { }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var d = readForm();
+    if (!d.name) {
+      err.textContent = "Bạn điền tên giúp mình nhé.";
+      err.hidden = false;
+      form.elements.name.focus();
+      return;
+    }
+    err.hidden = true;
+
+    var btn = $("g-submit");
+    btn.disabled = true;
+    btn.textContent = "Đang gửi...";
+    submitToApi(d).then(function (r) {
+      btn.disabled = false;
+      btn.textContent = "Gửi xác nhận";
+      if (r.tooFast) {
+        err.textContent = r.error || "Bạn thao tác nhanh quá, đợi vài phút rồi thử lại nhé.";
+        err.hidden = false;
+        return;
+      }
+      try { localStorage.setItem(LS_KEY, JSON.stringify({ d: d, sent: r.saved })); } catch (e2) {}
+      showThanks(d, r);
+    });
+  });
+
+  $("edit-again").addEventListener("click", function () {
+    thanks.hidden = true;
+    form.hidden = false;
+    form.elements.name.focus();
+  });
+
+  function copyText(text, btn, okLabel) {
+    var label = btn.textContent;
+    function done(ok) {
+      btn.textContent = ok ? okLabel : "Bạn chọn rồi copy thủ công nhé";
+      setTimeout(function () { btn.textContent = label; }, 2200);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () { done(true); }, function () { done(false); });
+    } else {
+      done(false);
+    }
+  }
+
+  $("copy-msg").addEventListener("click", function () {
+    copyText($("thanks-msg").textContent, this, "Đã sao chép!");
+  });
+
+  $("share-btn").addEventListener("click", function () {
+    copyText(location.href, this, "Đã sao chép link!");
+  });
+
+  /* ---------- bấm bông hoa: nổ cánh + mở nhạc ---------- */
+  (function constel() {
+    var btn = $("constel");
+    if (!btn) { return; }
+    var gate = $("gate");
+    btn.addEventListener("click", function () {
+      if (btn.classList.contains("blown")) { return; }
+      var svg = btn.querySelector("svg");
+      var r = (svg || btn).getBoundingClientRect();
+
+      // 1. chòm sao nổ tung
+      window.dispatchEvent(new CustomEvent("sky-burst", {
+        detail: { x: r.left + r.width / 2, y: r.top + r.height / 2 }
+      }));
+      btn.classList.add("blown");
+
+      // 2. mưa sao băng dồn dập
+      window.dispatchEvent(new Event("sky-storm"));
+
+      // 3. kéo màn, mở thiệp (nhạc đã vào từ chính cú bấm này)
+      setTimeout(function () {
+        if (gate) { gate.classList.add("open"); }
+        document.documentElement.classList.remove("gated");
+        window.dispatchEvent(new Event("gate-open"));
+      }, 620);
+      setTimeout(function () { if (gate) { gate.hidden = true; } }, 1500);
+    });
+  })();
+
+  var cp = $("copy-phone");
+  if (cp) {
+    cp.addEventListener("click", function () {
+      copyText(CONTACT_PHONE, this, "Đã sao chép!");
+    });
+  }
+
+  var cp2 = $("copy-phone-2");
+  if (cp2) {
+    cp2.addEventListener("click", function () {
+      copyText(CONTACT_PHONE_2, this, "Đã sao chép!");
+    });
+  }
+
+  /* ---------- nhạc nền: phát ngay, âm lượng gốc ----------
+     Trình duyệt chặn phát có tiếng khi khách chưa chạm vào trang, nên nếu lần
+     đầu bị chặn thì bám vào thao tác đầu tiên (chạm/cuộn/bấm) để vào nhạc. */
+  (function music() {
+    var audio = $("bgm");
+    if (!audio) { return; }
+    audio.volume = 1;
+
+    // Chrome chỉ nhận bấm/chạm/gõ phím là thao tác mở âm thanh; hover và lăn
+    // chuột thì không. Vẫn nghe hết mọi sự kiện và thử lại cho tới khi được.
+    var evs = ["pointerdown", "pointerup", "touchstart", "touchend", "keydown",
+               "click", "wheel", "scroll", "mousemove", "mouseover", "pointermove"];
+    var done = false;
+    var lastTry = 0;
+
+    function stop() {
+      done = true;
+      evs.forEach(function (ev) { window.removeEventListener(ev, tryPlay, true); });
+    }
+
+    function tryPlay() {
+      if (done) { return; }
+      var now = Date.now();
+      if (now - lastTry < 400) { return; }   // chặn gọi dồn dập từ mousemove
+      lastTry = now;
+      var p = audio.play();
+      if (p && p.then) {
+        p.then(stop, function () { /* còn bị chặn - giữ listener, chờ thao tác sau */ });
+      } else {
+        stop();
+      }
+    }
+
+    evs.forEach(function (ev) {
+      window.addEventListener(ev, tryPlay, { capture: true, passive: true });
+    });
+
+    /* Rời trang thì tắt nhạc. Chuyển sang app khác, khoá máy, hay mở link
+       trong Facebook rồi thoát ra - trình duyệt vẫn giữ trang sống và nhạc
+       cứ thế chạy nền. Quay lại thì bật tiếp đúng chỗ đang dở. */
+    var dangNghe = false;
+    document.addEventListener("visibilitychange", function () {
+      if (document.hidden) {
+        dangNghe = !audio.paused;
+        audio.pause();
+      } else if (dangNghe) {
+        var p2 = audio.play();
+        if (p2 && p2.catch) { p2.catch(function () { /* trình duyệt chặn thì thôi */ }); }
+      }
+    });
+    window.addEventListener("pagehide", function () { audio.pause(); });
+
+    tryPlay();
+  })();
+
+  /* Lớp loang mờ trong chùm hoa góc dùng bộ lọc Gaussian của SVG - thứ rất
+     nặng trên điện thoại, mà lại có tới hơn hai chục bản vì mỗi góc nhân bản
+     một lần. Gỡ hẳn phần nguồn trong defs thì mọi bản sao qua <use> cũng mất
+     theo. Bông hoa ở màn mở thiệp vẽ thẳng nên không bị ảnh hưởng, vẫn còn quầng. */
+  (function nheHoaGoc() {
+    if (window.innerWidth >= 760) { return; }
+    var mo = document.querySelectorAll("#bouquet [filter], #bloom [filter]");
+    for (var i = 0; i < mo.length; i++) {
+      if (mo[i].parentNode) { mo[i].parentNode.removeChild(mo[i]); }
+    }
+  })();
+
+  /* Bản đồ Google: chờ một lúc, không tải nổi (mất mạng, bị chặn) thì ẩn đi
+     cho ảnh trường bên dưới lộ ra. */
+  (function venueMap() {
+    var box = $("vmap");
+    var fr = $("vmap-frame");
+    if (!box || !fr) { return; }
+    var ok = false;
+    fr.addEventListener("load", function () { ok = true; });
+    fr.addEventListener("error", function () { box.classList.add("map-off"); });
+
+    function watch() {
+      setTimeout(function () {
+        if (!ok) { box.classList.add("map-off"); }
+      }, 10000);
+    }
+
+    if (typeof IntersectionObserver === "function") {
+      var io = new IntersectionObserver(function (es) {
+        if (es[0] && es[0].isIntersecting) { io.disconnect(); watch(); }
+      }, { rootMargin: "300px" });
+      io.observe(box);
+    } else {
+      watch();
+    }
+  })();
+
+  Array.prototype.forEach.call(document.querySelectorAll(".ph"), function (ph) {
+    var code = ph.querySelector(".ph-hint code");
+    if (!code || ph.querySelector("img")) { return; }
+    var raw = code.textContent.trim();
+    var m = raw.match(/^(.*)\.([a-z0-9]+)$/i);
+    var base = m ? m[1] : raw;
+    var exts = ["jpg", "jpeg", "png", "webp"];
+    if (m) {                       // thử đúng đuôi ghi trên nhãn trước
+      var first = m[2].toLowerCase();
+      exts = [first].concat(exts.filter(function (e) { return e !== first; }));
+    }
+    (function tryNext(i) {
+      if (i >= exts.length) { return; }
+      var img = new Image();
+      img.decoding = "async";   // giải mã ngoài luồng chính cho đỡ khựng
+      img.onload = function () {
+        img.alt = "";
+        ph.insertBefore(img, ph.firstChild);
+      };
+      img.onerror = function () { tryNext(i + 1); };
+      img.src = base + "." + exts[i];
+    })(0);
+  });
+
+  (function () {
+    var cv = document.getElementById("sky-cv");
+    if (!cv || !cv.getContext) { return; }
+    var ctx = cv.getContext("2d");
+    var DPR = 1;   // đặt lại trong resize() theo bề rộng màn hình
+    var W = 0, H = 0, petals = [], blooms = [], grain = null, bursts = [];
+    // Máy hẹp coi như điện thoại: vẽ ít cánh hơn và bỏ bớt chi tiết.
+    function nhe() { return W < 760; }
+    var mx = 0, my = 0, smx = 0, smy = 0;
+
+    function rand(a, b) { return a + Math.random() * (b - a); }
+
+    /* bảng màu cánh hoa: xanh phấn nhiều sắc độ + vài cánh trắng ngà */
+    var TONES = [
+      ["#A9C4DE", "#7C9CC2"], ["#C3D7E9", "#93B2D0"], ["#8FB0D2", "#6B8FB6"],
+      ["#DCE7F2", "#B3C8DE"], ["#F3EFE6", "#D9D2C4"]
+    ];
+
+    /* giấy nhám: vẽ một lần rồi lặp, nhẹ hơn vẽ mỗi khung hình */
+    function makeGrain() {
+      var g = document.createElement("canvas");
+      g.width = g.height = 180;
+      var x = g.getContext("2d");
+      var im = x.createImageData(180, 180);
+      for (var i = 0; i < im.data.length; i += 4) {
+        var v = 236 + (Math.random() * 20 | 0);
+        im.data[i] = v; im.data[i + 1] = v - 2; im.data[i + 2] = v - 8;
+        im.data[i + 3] = 20 + (Math.random() * 16 | 0);
+      }
+      x.putImageData(im, 0, 0);
+      grain = ctx.createPattern(g, "repeat");
+    }
+
+    /* vệt loang màu nước ở các góc */
+    function makeBlooms() {
+      blooms = [];
+      var soVang = nhe() ? 3 : 5;
+      for (var i = 0; i < soVang; i++) {
+        blooms.push({
+          x: rand(-.1, 1.1), y: rand(-.05, 1.05),
+          r: rand(.22, .46), ph: rand(0, 6.283),
+          c: i % 2 ? "150,178,208" : "196,214,232"
+        });
+      }
+    }
+
+    /* một cánh hoa: hình giọt cong, vẽ bằng hai cung bezier */
+    function petalPath(x, r) {
+      x.beginPath();
+      x.moveTo(0, -r);
+      x.bezierCurveTo(r * .82, -r * .62, r * .74, r * .55, 0, r);
+      x.bezierCurveTo(-r * .74, r * .55, -r * .82, -r * .62, 0, -r);
+      x.closePath();
+    }
+
+    function spawnPetal(o) {
+      o = o || {};
+      var t = TONES[(Math.random() * TONES.length) | 0];
+      return {
+        x: o.x != null ? o.x : rand(-40, W + 40),
+        y: o.y != null ? o.y : rand(-H * .25, -20),
+        r: rand(7, 17),
+        vy: rand(26, 68),
+        vx: rand(-16, 16),
+        sway: rand(26, 70),           // biên độ đu đưa ngang
+        swaySp: rand(.5, 1.25),
+        spin: rand(-1.5, 1.5),        // tốc độ xoay quanh trục đứng
+        flip: rand(.8, 2.1),          // tốc độ lật cánh
+        ph: rand(0, 6.283),
+        rot: rand(0, 6.283),
+        a: rand(.5, .95),
+        depth: rand(.55, 1.25),       // lớp xa/gần
+        c0: t[0], c1: t[1],
+        t: 0
+      };
+    }
+
+    function makePetals() {
+      petals = [];
+      // Điện thoại gánh ít cánh thôi cho đỡ ì.
+      var n = Math.min(nhe() ? 14 : 32, Math.round(W * H / (nhe() ? 30000 : 44000)));
+      for (var i = 0; i < n; i++) {
+        var p = spawnPetal();
+        p.y = rand(-H * .2, H);       // rải sẵn khắp màn lúc mở trang
+        petals.push(p);
+      }
+    }
+
+    function resize() {
+      W = window.innerWidth; H = window.innerHeight;
+      var tiLe = window.devicePixelRatio || 1;
+      DPR = Math.min(tiLe, W < 760 ? 1.25 : 2);
+      cv.width = Math.ceil(W * DPR); cv.height = Math.ceil(H * DPR);
+      ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+      makeGrain(); makeBlooms(); makePetals();
+    }
+
+    // Khuôn màu dùng lại: chỉ phụ thuộc cặp màu, mặt trước/sau và bán kính làm tròn.
+    var khuonMau = Object.create(null);
+    function layKhuon(p, back) {
+      var r = Math.round(p.r);
+      var k = p.c0 + p.c1 + (back ? "s" : "t") + r;
+      var g = khuonMau[k];
+      if (!g) {
+        g = ctx.createLinearGradient(0, -r, 0, r);
+        g.addColorStop(0, back ? p.c1 : p.c0);
+        g.addColorStop(1, back ? p.c0 : p.c1);
+        khuonMau[k] = g;
+      }
+      return g;
+    }
+
+    function drawPetal(p, ts) {
+      // lật cánh 3D giả: co trục ngang theo sóng sin, mặt sau tối hơn
+      var fl = Math.sin(ts * .001 * p.flip + p.ph);
+      var sx = Math.abs(fl) * .78 + .22;
+      var back = fl < 0;
+      ctx.save();
+      ctx.translate(p.x, p.y);
+      ctx.rotate(p.rot);
+      ctx.scale(sx, 1);
+      ctx.globalAlpha = p.a * (back ? .78 : 1);
+      ctx.fillStyle = layKhuon(p, back);
+      petalPath(ctx, p.r);
+      ctx.fill();
+      // Gân giữa: thêm một nét vẽ cho mỗi cánh, trên điện thoại thì bỏ.
+      if (!nhe()) {
+        ctx.globalAlpha = p.a * .3;
+        ctx.strokeStyle = p.c1;
+        ctx.lineWidth = .7;
+        ctx.beginPath();
+        ctx.moveTo(0, -p.r * .78);
+        ctx.lineTo(0, p.r * .72);
+        ctx.stroke();
+      }
+      ctx.restore();
+      ctx.globalAlpha = 1;
+    }
+
+    function updPetals(dt, ts) {
+      for (var i = 0; i < petals.length; i++) {
+        var p = petals[i];
+        p.t += dt;
+        p.y += p.vy * p.depth * dt;
+        p.x += (p.vx + Math.sin(p.t * p.swaySp + p.ph) * p.sway) * dt;
+        p.rot += p.spin * dt;
+        if (p.y - p.r > H + 30) {
+          petals[i] = spawnPetal({ y: rand(-H * .25, -30) });
+        } else if (p.x < -70) { p.x = W + 60; }
+        else if (p.x > W + 70) { p.x = -60; }
+        drawPetal(p, ts);
+      }
+    }
+
+    /* bấm: cánh hoa toả ra từ điểm bấm */
+    function spawnBurst(x, y) {
+      var parts = [];
+      var soCanh = nhe() ? 16 : 46;
+      for (var i = 0; i < soCanh; i++) {
+        var a = Math.random() * 6.283, sp = rand(90, 420);
+        var p = spawnPetal({ x: x, y: y });
+        p.bx = Math.cos(a) * sp; p.by = Math.sin(a) * sp;
+        p.life = rand(1.1, 2.4); p.t = 0;
+        parts.push(p);
+      }
+      bursts.push({ parts: parts });
+    }
+
+    function updBursts(dt, ts) {
+      for (var i = bursts.length - 1; i >= 0; i--) {
+        var b = bursts[i];
+        for (var q = b.parts.length - 1; q >= 0; q--) {
+          var p = b.parts[q];
+          p.t += dt;
+          if (p.t >= p.life) { b.parts.splice(q, 1); continue; }
+          var drag = 1 - dt * 1.25;
+          p.bx *= drag; p.by *= drag;
+          p.x += p.bx * dt;
+          p.y += (p.by + p.vy * 1.4) * dt;
+          p.rot += p.spin * 2.2 * dt;
+          p.a = Math.max(0, 1 - p.t / p.life) * .95;
+          drawPetal(p, ts);
+        }
+        if (!b.parts.length) { bursts.splice(i, 1); }
+      }
+    }
+
+    var last = 0, mocVe = 0;
+    function frame(ts) {
+      requestAnimationFrame(frame);
+      if (document.hidden) { last = ts; return; }
+      // Điện thoại: 30 hình/giây là đủ cho cánh hoa trôi, máy đỡ một nửa việc.
+      if (nhe()) {
+        if (ts - mocVe < 32) { return; }
+        mocVe = ts;
+      }
+      var dt = Math.min((ts - last) / 1000 || .016, .05);
+      last = ts;
+      smx += (mx - smx) * .055; smy += (my - smy) * .055;
+      var sy = window.pageYOffset || 0;
+      ctx.clearRect(0, 0, W, H);
+
+      // vệt loang màu nước
+      for (var i = 0; i < blooms.length; i++) {
+        var bl = blooms[i];
+        var bx = bl.x * W + smx * 30 + Math.sin(ts * .00009 + bl.ph) * 22;
+        var by = bl.y * H + smy * 20 - sy * .02;
+        var br = bl.r * Math.min(W, H) * (1 + Math.sin(ts * .00018 + bl.ph) * .06);
+        var bg = ctx.createRadialGradient(bx, by, 0, bx, by, br);
+        bg.addColorStop(0, "rgba(" + bl.c + ",.1)");
+        bg.addColorStop(.55, "rgba(" + bl.c + ",.04)");
+        bg.addColorStop(1, "rgba(" + bl.c + ",0)");
+        ctx.fillStyle = bg;
+        ctx.fillRect(bx - br, by - br, br * 2, br * 2);
+      }
+
+      // giấy nhám
+      if (grain) {
+        ctx.fillStyle = grain;
+        if (nhe()) {
+          ctx.fillRect(0, 0, W, H);
+        } else {
+          ctx.save();
+          ctx.translate(-(sy * .04) % 180, 0);
+          ctx.fillRect(0, 0, W + 180, H);
+          ctx.restore();
+        }
+      }
+
+      updPetals(dt, ts);
+      updBursts(dt, ts);
+    }
+
+    window.addEventListener("mousemove", function (e) {
+      mx = e.clientX / W - .5;
+      my = e.clientY / H - .5;
+    }, { passive: true });
+
+    window.addEventListener("sky-burst", function (e) {
+      spawnBurst(e.detail.x, e.detail.y);
+    });
+
+    window.addEventListener("sky-storm", function () {
+      var soDot = nhe() ? 18 : 60;
+      var tran = nhe() ? 34 : 150;
+      for (var i = 0; i < soDot; i++) {
+        setTimeout(function () {
+          petals.push(spawnPetal({ y: rand(-H * .3, -20) }));
+          if (petals.length > tran) { petals.shift(); }
+        }, i * 28);
+      }
+    });
+
+    document.addEventListener("click", function (e) {
+      if (e.target.closest("a,button,input,select,textarea,label,.form,.paper,.ph")) { return; }
+      spawnBurst(e.clientX, e.clientY);
+    });
+
+    window.addEventListener("resize", resize);
+    resize();
+    requestAnimationFrame(frame);
+  })();
+
+  if (hasGsap) {
+    gsap.registerPlugin(ScrollTrigger);
+    document.documentElement.classList.add("gsap-on");
+
+    var gated = document.documentElement.classList.contains("gated");
+    var tl = gsap.timeline({ defaults: { ease: "power3.out" }, paused: gated });
+    window.addEventListener("gate-open", function () { tl.play(0); });
+    // Điện thoại: chỉ hiện dần, bỏ mọi đoạn trôi dọc.
+    var mob = window.matchMedia("(max-width:760px)").matches;
+
+    tl.from(".hero .eyebrow", { opacity: 0, y: mob ? 0 : 26, duration: .7 }, .85)
+      .from(".hero-photo", mob
+        ? { opacity: 0, duration: .8 }
+        : { opacity: 0, y: 46, scale: .93, duration: 1.05, ease: "back.out(1.2)" }, 1.1);
+
+    if (!mob) {
+      gsap.to(".hero-photo", { y: -4, duration: 4.8, yoyo: true, repeat: -1, ease: "sine.inOut", delay: 4.2 });
+
+      gsap.to(".hero-inner", {
+        yPercent: -4, opacity: .6, ease: "none",
+        scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom 32%", scrub: true }
+      });
+    }
+
+    /* Các khối bên dưới: ẩn sẵn, chờ ảnh đầu vào chỗ rồi mới gắn mốc cuộn.
+       Gắn ngay từ đầu thì khối ảnh nằm sát dưới màn hình đầu tiên đã lọt vào
+       vùng kích hoạt, nên nó hiện ra trước cả ảnh chính - nhìn như lỗi.
+       Dùng fromTo chứ không dùng from: from tự đọc giá trị đang có làm đích,
+       mà lúc này chúng đang bị ẩn nên đích sẽ thành 0, tức ẩn vĩnh viễn. */
+    var khoiHien = gsap.utils.toArray(".rv, .stagger > *").filter(function (el) {
+      return !(el.hidden || el.closest("[hidden]"));
+    });
+    khoiHien.forEach(function (el) { gsap.set(el, { opacity: 0 }); });
+
+    function batDauHien() {
+      khoiHien.forEach(function (el) {
+        var cs = getComputedStyle(el);
+        var fx = cs.getPropertyValue("--fx").trim();
+        var fy = cs.getPropertyValue("--fy").trim();
+        var fr = parseFloat(cs.getPropertyValue("--fr")) || 0;
+        var idx = parseFloat(cs.getPropertyValue("--i")) || 0;
+
+        var tu = mob
+          ? { opacity: 0 }
+          : { x: fx || 0, y: fy || 46, rotation: fr, opacity: 0 };
+        var den = mob
+          ? { opacity: 1, duration: .6, delay: idx * .06, ease: "power2.out" }
+          : { x: 0, y: 0, rotation: 0, opacity: 1, duration: 1.05, delay: idx * .09, ease: "back.out(1.4)" };
+        den.scrollTrigger = {
+          trigger: el.closest(".stagger") || el,
+          start: mob ? "top 92%" : "top 88%",
+          once: true
+        };
+        gsap.fromTo(el, tu, den);
+      });
+      ScrollTrigger.refresh();
+    }
+
+    if (gated) {
+      // chờ ảnh đầu chạy xong: trên điện thoại hết ở mốc 1,9 giây
+      window.addEventListener("gate-open", function () {
+        gsap.delayedCall(mob ? 2 : 2.3, batDauHien);
+      });
+    } else {
+      batDauHien();
+    }
+
+    if (window.matchMedia("(hover:hover)").matches) {
+      var pt = document.querySelector(".hero-photo");
+      if (pt) {
+        pt.addEventListener("mousemove", function (e) {
+          var r = pt.getBoundingClientRect();
+          gsap.to(pt, {
+            rotateY: ((e.clientX - r.left) / r.width - .5) * 15,
+            rotateX: -((e.clientY - r.top) / r.height - .5) * 11,
+            transformPerspective: 700, duration: .45, ease: "power2.out"
+          });
+        });
+        pt.addEventListener("mouseleave", function () {
+          gsap.to(pt, { rotateY: 0, rotateX: 0, duration: .9, ease: "elastic.out(1,.5)" });
+        });
+      }
+    }
+
+    window.addEventListener("load", function () { ScrollTrigger.refresh(); });
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "name": "thiep-tot-nghiep",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "pg": "^8.12.0"
+  }
+}

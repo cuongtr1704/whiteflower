@@ -1,0 +1,12 @@
+# Vercel chi phuc vu trang tinh: index.html + anh/
+# Moi thu con lai la cua backend (Render), khong duoc phat qua FE
+server.js
+zalo.js
+db.js
+package.json
+README.md
+.gitignore
+data/
+
+# Anh goc chua nen - khong day len hosting
+anh-goc/
