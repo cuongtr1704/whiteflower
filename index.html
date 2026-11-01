@@ -15,7 +15,7 @@ img{max-width:100%}
 <meta name="format-detection" content="date=no,address=no,email=no">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@200;300;400;500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Dancing+Script:wght@600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@200;300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Dancing+Script:wght@600;700&display=swap">
 <style>
 :root{
   /* giấy nhám trắng khói */
@@ -107,15 +107,13 @@ code{font-family:ui-monospace,"Cascadia Mono",Consolas,monospace;font-size:.86em
 }
 @keyframes sparkTw{0%,100%{opacity:.3;rotate:0deg;scale:.85}50%{opacity:.95;rotate:18deg;scale:1.1}}
 .eyebrow{font-size:.7rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold-soft);font-weight:400}
-/* Dòng mở đầu nằm trên nền trời sao nên chữ nhỏ màu nhạt đọc không ra. Riêng
-   chỗ này cho to hơn một chút.
-   Dùng font tiêu đề chứ không phải font thân bài: Be Vietnam Pro chỉ nạp tới nét
-   500, đòi đậm hơn là trình duyệt bôi đậm giả, chữ nhoè và bết nét. Cormorant có
-   sẵn nét 600 thật nên lên chữ sạch, lại hợp giọng thiệp hơn. */
+/* Dòng mở đầu nằm trên nền trời sao nên chữ nhỏ màu nhạt đọc không ra.
+   Giữ nguyên font thân bài cho nét chữ dày dặn, nhưng phải là nét 600 có thật
+   (link Google Fonts đã xin) chứ đừng để trình duyệt bôi đậm giả. Chữ hoa
+   và giãn chữ rộng là thứ làm dòng này sang, không phải kiểu chữ. */
 .hero .eyebrow{
-  font-family:var(--font-display);
-  font-size:clamp(.95rem,3vw,1.18rem);font-weight:600;
-  letter-spacing:.26em;color:var(--gold);
+  font-size:clamp(.92rem,2.9vw,1.12rem);font-weight:600;
+  letter-spacing:.3em;color:#4A6A92;
 }
 .script{font-family:var(--font-script);font-size:clamp(1.6rem,4.6vw,2.2rem);color:var(--pink);line-height:1.1;text-shadow:0 0 18px rgba(143,169,204,.35)}
 .sec-head{display:grid;gap:12px;justify-items:center;text-align:center;margin-bottom:clamp(30px,5vw,54px)}
@@ -243,7 +241,7 @@ code{font-family:ui-monospace,"Cascadia Mono",Consolas,monospace;font-size:.86em
 }
 .cal td.off{color:transparent}
 .cal td.day-x{
-  position:relative;color:var(--gold-bright);font-weight:700;
+  position:relative;color:var(--gold-bright);font-weight:600;
   /* Quầng trắng sát quanh chữ: bông hoa nằm ngay sau số nên không có cái này
      là con số chìm vào cánh. */
   text-shadow:0 0 4px #fff,0 0 8px rgba(255,255,255,.95),0 1px 2px rgba(255,255,255,.9);
